@@ -84,7 +84,7 @@
     <meta name="author" content="">
 
     <title>Login | BPRS Al-Masoem</title>
-
+    <link rel="icon" href="{{asset('style/img/LogoAlMasoemIB.png')}}">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('style/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
@@ -115,15 +115,14 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Login</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="{{ route('login') }}" method="post">
+                                        @csrf
+                                        
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                <input id="email" type="email" class="form-control form-control-user" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input id="password" type="password" class="form-control form-control-user" name="password" required autocomplete="current-password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -132,9 +131,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
