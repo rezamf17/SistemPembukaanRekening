@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('formulir');
 });
+Route::get('/wadiah', function () {
+    return view('wadiah');
+});
+Route::get('/mudharabah', function () {
+    return view('mudharabah');
+});
 
 Auth::routes();
 
