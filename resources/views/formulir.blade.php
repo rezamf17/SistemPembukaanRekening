@@ -5,20 +5,26 @@
     <img src="{{asset('style/img/bprs.png')}}" class="img-fluid" alt="Responsive image">
     <h3 class="text-center">APLIKASI PEMBUKAAN REKENING</h3>
   </div>
+  <form action="{{ url('/') }}" method="post" accept-charset="utf-8">
+    @csrf
   <div class="card-body">
     <label>Pilihan Kantor Cabang </label>
-    <select name="kantor_cabang" class="form-select">
+    <select name="id_cabang" class="form-select" required>
       <option value="">Pilih Kantor Cabang</option>
       <option value="1">Arcamanik</option>
-      <option value="1">Cianjur</option>
-      <option value="1">Cipacing</option>
-      <option value="1">Garut</option>
-      <option value="1">Jatiwangi</option>
-      <option value="1">Kopo</option>
-      <option value="1">Kulalet</option>
-      <option value="1">Majalaya</option>
-      <option value="1">Rancaekek</option>
+      <option value="2">Cianjur</option>
+      <option value="3">Cipacing</option>
+      <option value="4">Garut</option>
+      <option value="5">Jatiwangi</option>
+      <option value="6">Kopo</option>
+      <option value="7">Kulalet</option>
+      <option value="8">Majalaya</option>
+      <option value="9">Rancaekek</option>
     </select>
+    <label>Pilih Jenis Rekening</label> <br>
+    <button onclick="nasabah()" type="button" class="btn btn-primary">Rekening Nasabah Perorangan</button>
+    <button onclick="badan()" type="button" class="btn btn-danger">Rekening Nasabah Badan</button>
+    <p id="status"></p>
   </div>
   <div class="card-header text-white bg-primary">
     <h5>A. IDENTITAS NASABAH</h5>
@@ -30,13 +36,13 @@
     </div>
     <label>Jenis Kelamin</label>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <input class="form-check-input" type="radio" name="jenis_kelamin" value="Laki-laki">
       <label class="form-check-label" for="flexRadioDefault1">
         Laki-laki
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <input class="form-check-input" type="radio" name="jenis_kelamin" value="Perempuan">
       <label class="form-check-label" for="flexRadioDefault2">
         Perempuan
       </label>
@@ -47,13 +53,13 @@
     </div>
     <label>Status Kependudukan</label>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <input class="form-check-input" type="radio" name="status_kependudukan" value="Penduduk (WNI)">
       <label class="form-check-label" for="flexRadioDefault1">
         Penduduk (WNI)
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <input class="form-check-input" type="radio" name="status_kependudukan" value="Bukan Penduduk (WNA)">
       <label class="form-check-label" for="flexRadioDefault2">
         Bukan Penduduk (WNA)
       </label>
@@ -64,20 +70,7 @@
     </div>
     <div >
       <label>Tanggal Lahir</label> <br>
-      <div class="d-inline">
-        <label>DD</label>
-        <input type="number" pattern="[0-9]*" maxlength="2" size="2" class="tanggal-lahir" />
-      </div>
-      /
-      <div class="d-inline">
-        <label>MM</label>
-        <input type="number" pattern="[0-9]*" maxlength="2" size="2" class="tanggal-lahir" />
-      </div>
-      /
-      <div class="d-inline">
-        <label>YYYY</label>
-        <input type="number" pattern="[0-9]*" maxlength="4" size="4" class="tahun-lahir" />
-      </div>
+      <input type="date" name="tanggal_lahir" class="form-control">
     </div>
     <div class="form-group">
       <label>Nomor KTP</label>
@@ -97,32 +90,35 @@
     </div>
     <div class="form-group">
       <label>Dalam Hal Ini Bertindak Sebagai</label>
-      <input type="text" name="bertindak" class="form-control">
+      <input type="text" name="bertindak_sebagai" class="form-control">
     </div>
     <label>Tujuan Pembukaan Rekening</label>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <input class="form-check-input" type="radio" name="tujuan_buka_rekening" value="Saving" id="buka1">
       <label class="form-check-label" for="flexRadioDefault1">
         Saving
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <input class="form-check-input" type="radio" name="tujuan_buka_rekening" value="Jaga-jaga" id="buka2">
       <label class="form-check-label" for="flexRadioDefault2">
         Jaga-jaga
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <input class="form-check-input" type="radio" name="tujuan_buka_rekening" value="Transaksi Bisnis" id="buka3">
       <label class="form-check-label" for="flexRadioDefault2">
         Transaksi Bisnis
       </label>
     </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault">
-      <label class="form-check-label" for="flexRadioDefault2">
+    <div class="form-row">
+      <div class="col-6">
+        <input class="form-check-input" type="radio" name="tujuan_buka_rekening" id="buka4">
+        <label class="form-check-label" for="flexRadioDefault2">
         Lainnya
       </label>
+        <input class="form-control" type="input" name="tujuan_buka_rekening" placeholder="Lainnya..." id="buka_rekening_lainnya">   
+      </div>
     </div>
   </div>
 <div class="card-header text-white bg-primary">
@@ -131,17 +127,19 @@
 <div class="card-body">
   <label>Jenis Simpanan</label>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault">
+    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Wadiah">
     <label class="form-check-label" for="flexRadioDefault1">
       Simpanan Wadiah
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault">
+    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Mudharabah">
     <label class="form-check-label" for="flexRadioDefault2">
       Simpanan Mudharabah
     </label>
   </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 <div class="card-header text-white bg-primary">
   <h5>C. DATA NASABAH PERORANGAN</h5>
@@ -149,34 +147,37 @@
 <div class="card-body">
   <label>Sumber Penghasilan</label>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" id="nasabah_penghasilan1">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan1" name="sumber_penghasilan">
     <label class="form-check-label" for="flexCheckDefault">
       Hasil Usaha
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" id="nasabah_penghasilan2">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan2" name="sumber_penghasilan">
     <label class="form-check-label" for="flexCheckDefault">
       Hasil Investasi
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" id="nasabah_penghasilan3">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan3" name="sumber_penghasilan">
     <label class="form-check-label" for="flexCheckDefault">
       Orang Tua
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" id="nasabah_penghasilan4">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan4" name="sumber_penghasilan">
     <label class="form-check-label" for="flexCheckDefault">
       Gaji
     </label>
   </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" id="nasabah_penghasilan5">
+  <div class="form-row">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan5" name="sumber_penghasilan">
     <label class="form-check-label" for="flexCheckDefault">
       Lainnya
     </label>
+    <div class="col-6">
+      <input class="form-control" type="input" name="sumber_penghasilan" placeholder="Lainnya..." id="nasabah_penghasilan6"> 
+    </div>
   </div>
   <div class="form-group">
     <label>Nama Tempat Kerja</label>
@@ -243,7 +244,7 @@
       Wiraswasta
     </label>
   </div>
-  <div class="form-check">
+  <div class="form-row">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan9">
     <label class="form-check-label" for="flexRadioDefault2">
       Lainnya
@@ -285,7 +286,6 @@
     </select>
   </div>
 </div>
-
 <div class="card-header text-white bg-primary"><h5>D. DATA NASABAH BADAN</h5></div>
 <div class="card-body">
   <label>Bentuk Usaha</label>
@@ -361,56 +361,6 @@
   </div>
 </div>
   <div class="card-header text-white bg-primary">
-    <h5>E. KHUSUS DEPOSITO</h5>
-  </div>
-  <div class="card-body">
-    <div class="form-group">
-      <label>Nominal Setoran</label>
-      <input type="text" name="" placeholder="Rp. ..." class="form-control">
-    </div>
-  <div class="form-group">
-    <label>Mata Uang</label>
-    <input type="text" name="" class="form-control">
-  </div>
-  <div class="form-group">
-    <label>Jangka Waktu</label>
-    <select name="" class="form-select">
-      <option value="">Pilih Jangka Waktu</option>
-      <option value="">1 Bulan</option>
-      <option value="">3 Bulan</option>
-      <option value="">6 Bulan</option>
-      <option value="">12 Bulan</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label>Pembayaran Bagi Hasil</label>
-    <select name="" class="form-control">
-      <option value="">Pilih Pembayaran Bagi Hasil</option>
-      <option value="">Dibukukan pada Tabungan</option>
-      <option value="">Dibayar pada cabang/ Bank</option>
-    </select>
-    Nomor Rekening Pembayaran Bagi Hasil
-    <input type="number" name="" class="form-control">
-    <label>Perpanjang Otomatis</label>
-     <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault">
-      Ya
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault">
-      Tidak
-  </div>
-  <div class="form-group">
-    <label>Ahli Waris</label>
-    <input type="text" name="" class="form-control">
-  </div>
-  <div class="form-group">
-    <label>Hubungan Dengan Ahli Waris</label>
-    <input type="text" name="" class="form-control">
-  </div>
-  </div>
-  </div>
-  <div class="card-header text-white bg-primary">
     <h5>F. PERNYATAAN NASABAH</h5>
   </div>
   <div class="card-body">
@@ -445,4 +395,5 @@ b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan r
   <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 </div>
+@include('sweetalert::alert')
 @endsection

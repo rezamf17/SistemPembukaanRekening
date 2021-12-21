@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormulirController;
+use App\Http\Controllers\WadiahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('formulir');
-});
-Route::get('/wadiah', function () {
-    return view('wadiah');
-});
+
+
 Route::get('/mudharabah', function () {
     return view('mudharabah');
 });
-
+Route::resource('/', FormulirController::class);
+Route::resource('/wadiah', WadiahController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
