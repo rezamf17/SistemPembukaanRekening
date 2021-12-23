@@ -1,12 +1,12 @@
 @extends('layouts.FormTemplate')
 @section('content')
 <div class="card">
+  <form action="{{ url('/') }}" method="post" accept-charset="utf-8">
+    @csrf
   <div class="card-header text-center text-white bg-primary">
     <img src="{{asset('style/img/bprs.png')}}" class="img-fluid" alt="Responsive image">
     <h3 class="text-center">APLIKASI PEMBUKAAN REKENING</h3>
   </div>
-  <form action="{{ url('/') }}" method="post" accept-charset="utf-8">
-    @csrf
   <div class="card-body">
     <label>Pilihan Kantor Cabang </label>
     <select name="id_cabang" class="form-select" required>
@@ -138,34 +138,34 @@
       Simpanan Mudharabah
     </label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 </div>
+
+{{-- zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz --}}
 <div class="card-header text-white bg-primary">
   <h5>C. DATA NASABAH PERORANGAN</h5>
 </div>
 <div class="card-body">
   <label>Sumber Penghasilan</label>
   <div class="form-check">
-    <input class="form-check-input" type="radio" id="nasabah_penghasilan1" name="sumber_penghasilan">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan1" name="sumber_penghasilan" value="Hasil Usaha">
     <label class="form-check-label" for="flexCheckDefault">
       Hasil Usaha
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" id="nasabah_penghasilan2" name="sumber_penghasilan">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan2" name="sumber_penghasilan" value="Hasil Investasi">
     <label class="form-check-label" for="flexCheckDefault">
       Hasil Investasi
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" id="nasabah_penghasilan3" name="sumber_penghasilan">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan3" name="sumber_penghasilan" value="Orang Tua">
     <label class="form-check-label" for="flexCheckDefault">
       Orang Tua
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" id="nasabah_penghasilan4" name="sumber_penghasilan">
+    <input class="form-check-input" type="radio" id="nasabah_penghasilan4" name="sumber_penghasilan" value="Gaji">
     <label class="form-check-label" for="flexCheckDefault">
       Gaji
     </label>
@@ -181,184 +181,212 @@
   </div>
   <div class="form-group">
     <label>Nama Tempat Kerja</label>
-    <input type="text" name="" class="form-control" id="nasabah_tempat_kerja">
+    <input type="text" class="form-control" id="nasabah_tempat_kerja" name="nama_tempat_kerja">
   </div>
   <div class="form-group">
     <label>Jabatan</label>
-    <input type="text" name="" class="form-control" id="nasabah_jabatan">
+    <input type="text" class="form-control" id="nasabah_jabatan" name="jabatan">
   </div>
   <div class="form-group">
     <label>Bidang Usaha</label>
-    <input type="text" name="" class="form-control" id="nasabah_usaha">
+    <input type="text" class="form-control" id="nasabah_usaha" name="bidang_usaha">
   </div>
   <div class="form-group">
     <label>Alamat Perusahaan</label>
-    <textarea name="" class="form-control" id="nasabah_alamat"></textarea>
+    <textarea class="form-control" id="nasabah_alamat" name="alamat_perusahaan"></textarea>
   </div>
   <label>Pekerjaan</label>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan1">
+    <input class="form-check-input" type="radio"  id="nasabah_pekerjaan1" name="pekerjaan" value="Pelajar / Mahasiswa">
     <label class="form-check-label" for="flexRadioDefault1">
       Pelajar / Mahasiswa
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan2">
+    <input class="form-check-input" type="radio" id="nasabah_pekerjaan2" name="pekerjaan" value="Ibu Rumah Tangga">
     <label class="form-check-label" for="flexRadioDefault2">
       Ibu Rumah Tangga
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan3">
+    <input class="form-check-input" type="radio" id="nasabah_pekerjaan3" name="pekerjaan" value="Karyawan Swasta">
     <label class="form-check-label" for="flexRadioDefault1">
       Karyawan Swasta
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan4">
+    <input class="form-check-input" type="radio"  id="nasabah_pekerjaan4" name="pekerjaan" value="POLRI / TNI">
     <label class="form-check-label" for="flexRadioDefault2">
       POLRI / TNI
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan5">
+    <input class="form-check-input" type="radio" id="nasabah_pekerjaan5" name="pekerjaan" value="Pejabat Negara">
     <label class="form-check-label" for="flexRadioDefault1">
       Pejabat Negara
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan6">
+    <input class="form-check-input" type="radio"  id="nasabah_pekerjaan6" name="pekerjaan" value="Pensiunan">
     <label class="form-check-label" for="flexRadioDefault2">
       Pensiunan
     </label>
   </div>
    <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan7">
+    <input class="form-check-input" type="radio"  id="nasabah_pekerjaan7" name="pekerjaan" value="Pegawai Negeri">
     <label class="form-check-label" for="flexRadioDefault1">
       Pegawai Negeri
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan8">
+    <input class="form-check-input" type="radio" id="nasabah_pekerjaan8" name="pekerjaan" value="Wiraswasta">
     <label class="form-check-label" for="flexRadioDefault2">
       Wiraswasta
     </label>
   </div>
   <div class="form-row">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nasabah_pekerjaan9">
+    <input class="form-check-input" type="radio" id="nasabah_pekerjaan9" name="pekerjaan">
     <label class="form-check-label" for="flexRadioDefault2">
       Lainnya
     </label>
+    <div class="col-6">
+      <input class="form-control" type="input" name="pekerjaan" placeholder="Lainnya..." id="nasabah_pekerjaan10">
+    </div>
   </div>
   <div class="form-group">
     <label>Pendidikan</label>
-    <select name="" class="form-select" id="nasabah_pendidikan">
+    <select class="form-select" id="nasabah_pendidikan" name="pendidikan">
       <option value="">Pilih Pendidikan</option>
-      <option value="">SD</option>
-      <option value="">SMP/MTS</option>
-      <option value="">SMA/SMK</option>
-      <option value="">Sarjana</option>
-      <option value="">Pasca Sarjana</option>
-      <option value="">Paket A</option>
-      <option value="">Paket B</option>
-      <option value="">Paket C</option>
+      <option value="SD">SD</option>
+      <option value="SMP/MTS">SMP/MTS</option>
+      <option value="SMA/SMK">SMA/SMK</option>
+      <option value="Sarjana">Sarjana</option>
+      <option value="Pasca Sarjana">Pasca Sarjana</option>
+      <option value="Paket A">Paket A</option>
+      <option value="Paket B">Paket B</option>
+      <option value="Paket C">Paket C</option>
     </select>
   </div>
   <div class="form-group">
   <label>Agama</label>
-    <select name="" class="form-select" id="nasabah_agama">
+    <select class="form-select" id="nasabah_agama" name="agama">
       <option value="">Pilih Agama</option>
-      <option value="">Islam</option>
-      <option value="">Kristen</option>
-      <option value="">Hindu</option>
-      <option value="">Budha</option>
-      <option value="">Konghucu</option>
+      <option value="Islam">Islam</option>
+      <option value="Kristen">Kristen</option>
+      <option value="Hindu">Hindu</option>
+      <option value="Budha">Budha</option>
+      <option value="Konghucu">Konghucu</option>
     </select>
   </div>
   <div class="form-group">
     <label>Penghasilan</label>
-    <select name="" class="form-select" id="nasabah_penghasilan">
+    <select class="form-select" id="nasabah_penghasilan" name="penghasilan">
       <option value="">Pilih Penghasilan</option>
-      <option value=""> &#8804 Rp. 5 jt</option>
-      <option value=""> &#8804 Rp. 10 jt</option>
-      <option value=""> &#8804 Rp. 15 jt</option>
-      <option value=""> > Rp. 15 jt</option>
+      <option value=" < Rp. 5 jt"> &#8804 Rp. 5 jt</option>
+      <option value=" < Rp. 10 jt"> &#8804 Rp. 10 jt</option>
+      <option value=" < Rp. 15 jt"> &#8804 Rp. 15 jt</option>
+      <option value=" > Rp. 15 jt"> > Rp. 15 jt</option>
     </select>
   </div>
 </div>
+
+
+
+{{-- zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz --}}
 <div class="card-header text-white bg-primary"><h5>D. DATA NASABAH BADAN</h5></div>
 <div class="card-body">
   <label>Bentuk Usaha</label>
 <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="badan_bentuk1">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk1" value="PT">
     <label class="form-check-label" for="flexRadioDefault2">
       PT
     </label>
   </div>
    <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="badan_bentuk2">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk2" value="CV/RM">
     <label class="form-check-label" for="flexRadioDefault1">
       CV/RM
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="badan_bentuk3">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk3" value="Yayasan">
     <label class="form-check-label" for="flexRadioDefault2">
       Yayasan
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="badan_bentuk4">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk4" value="Lembaga Keuangan">
     <label class="form-check-label" for="flexRadioDefault2">
       Lembaga Keuangan
     </label>
   </div>
+  <div class="form-row">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk5">
+    <label class="form-check-label" for="flexRadioDefault2">
+      Lainnya
+    </label>
+    <div class="col-6">
+      <input type="text" name="bentuk_usaha" class="form-control" id="badan_bentuk6">
+    </div>
+  </div>
   <div class="form-group">
     <label>Nama Badan Usaha</label>
-    <input type="text" name="" class="form-control" id="badan_nama">
+    <input type="text" name="nama_badan_usaha" class="form-control" id="badan_nama">
   </div>
   <div class="form-group">
     <label>Jenis Usaha</label>
-    <input type="text" name="" class="form-control" id="badan_jenis">
+    <input type="text" name="jenis_usaha" class="form-control" id="badan_jenis">
   </div>
   <div class="form-group">
     <label>Izin Usaha / No. SIUP</label>
-    <input type="text" name="" class="form-control" id="badan_izin">
+    <input type="text" name="izin_usaha" class="form-control" id="badan_izin">
   </div>
   <div class="form-group">
     <label>Alamat Pemilik</label>
-    <textarea name="" class="form-control" id="badan_alamat"></textarea>
+    <textarea name="alamat_pemilik" class="form-control" id="badan_alamat"></textarea>
   </div>
   <div class="form-group">
     <label>NPWP</label>
-    <input type="number" name="" class="form-control" id="badan_npwp">
+    <input type="number" name="npwp_pemilik" class="form-control" id="badan_npwp">
   </div>
   <label>Sumber Dana</label>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="badan_sumber_dana">
+    <input class="form-check-input" type="radio" name="sumber_dana" id="badan_sumber_dana" value="Hasil Usaha">
     <label class="form-check-label" for="flexRadioDefault2">
       Hasil Usaha
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="badan_hasil_investasi">
+    <input class="form-check-input" type="radio" name="sumber_dana" id="badan_hasil_investasi" value="Hasil Investasi">
     <label class="form-check-label" for="flexRadioDefault2">
       Hasil Investasi
     </label>
   </div>
+  <div class="form-row">
+    <input class="form-check-input" type="radio" name="sumber_dana" id="sumber_dana_lainnya">
+    <label class="form-check-label" for="flexRadioDefault2">
+      Lainnya
+    </label>
+    <div class="col-6">
+      <input type="text" name="sumber_dana" id="sumber_dana_lainnya_text" class="form-control" placeholder="Lainnya..">
+    </div>
+  </div>
+
   <div class="form-group">
     <label>Omzet</label>
-    <input type="text" name="" class="form-control" id="badan_omzet">
+    <input type="text" name="omzet" class="form-control" id="badan_omzet">
   </div>
   <div class="form-group">
     <label>Pengurus</label>
     <ul class="list-group">
-      <li class="list-group-item">1. <input type="text" name="" class="form-control" id="badan_pengurus1"></li>
-      <li class="list-group-item">2. <input type="text" name="" class="form-control" id="badan_pengurus2"></li>
-      <li class="list-group-item">3. <input type="text" name="" class="form-control" id="badan_pengurus3"></li>
-      <li class="list-group-item">4. <input type="text" name="" class="form-control" id="badan_pengurus4"></li>
+      <li class="list-group-item">1. <input type="text" name="pengurus1" class="form-control" id="badan_pengurus1"></li>
+      <li class="list-group-item">2. <input type="text" name="pengurus2" class="form-control" id="badan_pengurus2"></li>
+      <li class="list-group-item">3. <input type="text" name="pengurus3" class="form-control" id="badan_pengurus3"></li>
+      <li class="list-group-item">4. <input type="text" name="pengurus4" class="form-control" id="badan_pengurus4"></li>
     </ul>
   </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
   <div class="card-header text-white bg-primary">
     <h5>F. PERNYATAAN NASABAH</h5>

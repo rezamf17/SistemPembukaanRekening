@@ -16,11 +16,11 @@ class CreateNasabahPerorangsTable extends Migration
         Schema::create('nasabah_perorang', function (Blueprint $table) {
             $table->id();
             $table->string('sumber_penghasilan');
-            $table->string('nama_tempat_kerja');
-            $table->string('jabatan');
-            $table->string('bidang_usaha');
-            $table->string('alamat_perusahaan');
-            $table->string('pekerjaan');
+            $table->string('nama_tempat_kerja')->nullable();
+            $table->string('jabatan')->nullable();
+            $table->string('bidang_usaha')->nullable();
+            $table->string('alamat_perusahaan')->nullable();
+            $table->string('pekerjaan')->nullable();
             $table->string('pendidikan');
             $table->string('agama');
             $table->string('penghasilan');
