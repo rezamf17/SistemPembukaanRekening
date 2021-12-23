@@ -160,5 +160,5 @@
     <script src="{{ asset('style/js/sb-admin-2.min.js') }}"></script>
 
 </body>
-
+@include('sweetalert::alert')
 </html>

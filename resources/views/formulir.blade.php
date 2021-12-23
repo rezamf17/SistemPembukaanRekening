@@ -1,7 +1,7 @@
 @extends('layouts.FormTemplate')
 @section('content')
 <div class="card">
-  <form action="{{ url('/') }}" method="post" accept-charset="utf-8">
+  <form action="{{ url('/') }}" method="post" onsubmit="return confirm('Anda yakin sudah mengisi data dengan benar?')" accept-charset="utf-8">
     @csrf
   <div class="card-header text-center text-white bg-primary">
     <img src="{{asset('style/img/bprs.png')}}" class="img-fluid" alt="Responsive image">
@@ -9,7 +9,7 @@
   </div>
   <div class="card-body">
     <label>Pilihan Kantor Cabang </label>
-    <select name="id_cabang" class="form-select" required>
+    <select name="id_cabang" class="form-select">
       <option value="">Pilih Kantor Cabang</option>
       <option value="1">Arcamanik</option>
       <option value="2">Cianjur</option>
@@ -420,8 +420,9 @@ b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan r
    </div>
 </div>
 <div class="card-footer">
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary confirm">Submit</button>
 </div>
 </div>
+
 @include('sweetalert::alert')
 @endsection
