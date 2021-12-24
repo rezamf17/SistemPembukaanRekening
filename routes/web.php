@@ -21,6 +21,9 @@ use App\Http\Controllers\WadiahController;
 Route::get('/mudharabah', function () {
     return view('mudharabah');
 });
+Route::get('/form', function () {
+    return view('form');
+});
 Route::resource('/', FormulirController::class);
 Route::resource('/nasabah', DataNasabahController::class);
 Route::resource('/wadiah', WadiahController::class);

@@ -8,18 +8,21 @@
     <h3 class="text-center">APLIKASI PEMBUKAAN REKENING</h3>
   </div>
   <div class="card-body">
+    <div class="text-center">
+    <label>Pilih Jenis Rekening</label> <br>
+    <a href="#" class="btn btn-primary btn-lg text-center">REKENING TABUNGAN</a>
+    <a href="#" class="btn btn-secondary btn-lg text-center">REKENING DEPOSITO</a> <br>
+    </div>
     <label>Pilihan Kantor Cabang </label>
     <select name="id_cabang" class="form-select">
       <option value="">Pilih Kantor Cabang</option>
       <option value="1">Arcamanik</option>
       <option value="2">Cianjur</option>
-      <option value="3">Cipacing</option>
-      <option value="4">Garut</option>
-      <option value="5">Jatiwangi</option>
-      <option value="6">Kopo</option>
-      <option value="7">Kulalet</option>
-      <option value="8">Majalaya</option>
-      <option value="9">Rancaekek</option>
+      <option value="3">Garut</option>
+      <option value="4">Jatiwangi</option>
+      <option value="5">Kopo</option>
+      <option value="6">Majalaya</option>
+      <option value="7">Rancaekek</option>
     </select>
     <label>Pilih Jenis Rekening</label> <br>
     <button onclick="nasabah()" type="button" class="btn btn-primary">Rekening Nasabah Perorangan</button>
@@ -88,9 +91,26 @@
       <label>Telepon/No. HP</label>
       <input type="number" name="no_hp" class="form-control">
     </div>
-    <div class="form-group">
-      <label>Dalam Hal Ini Bertindak Sebagai</label>
-      <input type="text" name="bertindak_sebagai" class="form-control">
+    <label>Dalam Hal Ini Bertindak Sebagai</label>
+      <div class="form-check">
+      <input class="form-check-input" type="radio" name="bertindak_sebagai" value="Diri Sendiri" id="bertindak1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Diri Sendiri
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="bertindak_sebagai" id="bertindak2">
+      <label class="form-check-label" for="flexRadioDefault2">
+        Jika mewakili, Hubungan dengan Nasabah adalah yang mewakili sebagai
+      </label>
+      <select name="bertindak_sebagai" class="form-select" id="bertindak3">
+      <option value="">Pilih Hubungan Dengan Nasabah</option>
+      <option value="Ahli Waris">Ahli Waris</option>
+      <option value="Orang tua">Orang tua</option>
+      <option value="Anak">Anak</option>
+      <option value="Suami/Istri">Suami/Istri</option>
+      <option value="Saudara">Saudara</option>
+     </select>
     </div>
     <label>Tujuan Pembukaan Rekening</label>
     <div class="form-check">
@@ -385,8 +405,6 @@
       <li class="list-group-item">4. <input type="text" name="pengurus4" class="form-control" id="badan_pengurus4"></li>
     </ul>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 </div>
   <div class="card-header text-white bg-primary">
     <h5>F. PERNYATAAN NASABAH</h5>
@@ -413,14 +431,10 @@ b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan r
     <label for="exampleFormControlFile1">Upload/Unggah Foto/Scan KTP Asli</label>
     <input type="file" class="form-control-file" id="exampleFormControlFile1">
     </div>
-
-    <div class="form-group">
-    <label for="exampleFormControlFile1">Upload/Unggah Selfie Dengan KTP Asli</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-   </div>
 </div>
 <div class="card-footer">
-  <button type="submit" class="btn btn-primary confirm">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 </div>
 

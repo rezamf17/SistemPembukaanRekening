@@ -167,3 +167,16 @@ penghasilan5.addEventListener("change", (e) => {
 	 		const value = e.currentTarget.value;
 	 		penghasilan6.disabled = false;
 	 	})
+
+const bertindak1 = document.getElementById("bertindak1");
+const bertindak2 = document.getElementById("bertindak2");
+const bertindak3 = document.getElementById("bertindak3");
+
+bertindak1.addEventListener("change", (e) => {
+	 		const value = e.currentTarget.value;
+	 		bertindak3.disabled = true;
+	 	})
+bertindak2.addEventListener("change", (e) => {
+	 		const value = e.currentTarget.value;
+	 		bertindak3.disabled = false;
+	 	})
