@@ -1,20 +1,43 @@
 @extends('layouts.FormTemplate')
 @section('content')
 <div class="card">
-  <form action="{{ url('/') }}" method="post" onsubmit="return confirm('Anda yakin sudah mengisi data dengan benar?')" accept-charset="utf-8">
-    @csrf
   <div class="card-header text-center text-white bg-primary">
     <img src="{{asset('style/img/bprs.png')}}" class="img-fluid" alt="Responsive image">
-    <h3 class="text-center">APLIKASI PEMBUKAAN REKENING</h3>
+    <h3 class="text-center">APLIKASI PEMBUKAAN REKENING DEPOSITO</h3>
+  </div>
+
+  <div class="card-header text-white bg-primary">
+    <h5>A. STATUS NASABAH</h5>
   </div>
   <div class="card-body">
     <div class="text-center">
-    <label>Pilih Jenis Rekening</label> <br>
+  <br> <h5> Silahkan Pilih Kategori Nasabah </h5>
+<div class="text-center">
     <a href="{{ url('/') }}" class="btn btn-primary btn-lg text-center">REKENING TABUNGAN</a>
     <a href="{{ url('/deposito') }}" class="btn btn-secondary btn-lg text-center">REKENING DEPOSITO</a> <br>
     </div>
+  </div>
+        <br><label>Apakah Anda Sudah Memiliki Rekening Bank BPRS ALMASOEM ?</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <label class="form-check-label" for="flexRadioDefault1">
+        YA
+      </label>
+      <label>Nomor Rekening</label>
+      <input type="text" name="" class="form-control"> 
+      <label>Atas Nama</label>
+      <input type="text" name="" class="form-control">  
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault">
+      <label class="form-check-label" for="flexRadioDefault2">
+        TIDAK
+      </label>
+    </div>
+    </div>
+<div class="card-body">
     <label>Pilihan Kantor Cabang </label>
-    <select name="id_cabang" class="form-select">
+    <select name="kantor_cabang" class="form-select">
       <option value="">Pilih Kantor Cabang</option>
       <option value="1">Arcamanik</option>
       <option value="2">Cianjur</option>
@@ -24,75 +47,122 @@
       <option value="6">Majalaya</option>
       <option value="7">Rancaekek</option>
     </select>
-    <label>Pilih Jenis Rekening</label> <br>
+  <label>Pilih Jenis Rekening</label> <br>
     <button onclick="nasabah()" type="button" class="btn btn-primary">Rekening Nasabah Perorangan</button>
     <button onclick="badan()" type="button" class="btn btn-danger">Rekening Nasabah Badan</button>
     <p id="status"></p>
-  </div>
-  <div class="card-header text-white bg-primary">
+</div>
+
+  <br><div class="card-header text-white bg-primary">
     <h5>A. IDENTITAS NASABAH</h5>
   </div>
-  <div class="row">
-    <div class="col-6">
-       <div class="card-body">
+  <div class="card-body">
     <div class="form-group">
-      <label>Nama Lengkap</label>
+      <div class="row">
+        <div class="col-6">
+      <label  style="margin-bottom: 10px;">Nama Lengkap</label>
       <input type="text" name="nama" class="form-control">
     </div>
-    <label>Jenis Kelamin</label>
+      <div class="col-6">
+            
+    <label  style="margin-bottom: 10px;">Jenis Kelamin</label>
+        <div class="row">
+          <div class="col-4">
+
     <div class="form-check">
       <input class="form-check-input" type="radio" name="jenis_kelamin" value="Laki-laki">
       <label class="form-check-label" for="flexRadioDefault1">
         Laki-laki
       </label>
+          </div>
     </div>
+    <div class="col-3">
+      
     <div class="form-check">
       <input class="form-check-input" type="radio" name="jenis_kelamin" value="Perempuan">
       <label class="form-check-label" for="flexRadioDefault2">
         Perempuan
       </label>
     </div>
+      </div>
+        </div>
+      </div>
+
     <div class="form-group">
-      <label>Nama Jelas Ibu Kandung</label>
+      <div class="row">
+        <div class="col-6">
+     <label  style="margin-bottom: 10px;">Nama Jelas Ibu Kandung</label>
       <input type="text" name="nama_ibu" class="form-control">
     </div>
-    <label>Status Kependudukan</label>
+
+      <div class="col-6">
+            
+    <label  style="margin-bottom: 10px;">Status Kependudukan</label>
+        <div class="row">
+          <div class="col-4">
+
     <div class="form-check">
       <input class="form-check-input" type="radio" name="status_kependudukan" value="Penduduk (WNI)">
       <label class="form-check-label" for="flexRadioDefault1">
         Penduduk (WNI)
       </label>
+          </div>
     </div>
+    <div class="col-5">
+      
     <div class="form-check">
       <input class="form-check-input" type="radio" name="status_kependudukan" value="Bukan Penduduk (WNA)">
       <label class="form-check-label" for="flexRadioDefault2">
         Bukan Penduduk (WNA)
       </label>
     </div>
+      </div>
+        </div>
+      </div>
+
     <div class="form-group">
-      <label>Tempat Lahir</label>
+    <div class="row">
+    <div class="col-6">
+    <label  style="margin-bottom: 10px;">Tempat Lahir</label>
       <input type="text" name="tempat_lahir" class="form-control">
-    </div>
-    <div >
-      <label>Tanggal Lahir</label> <br>
+    <div>
+     <label  style="margin-bottom: 10px;">Tanggal Lahir </label> <br>
       <input type="date" name="tanggal_lahir" class="form-control">
     </div>
+    </div>
+
     <div class="form-group">
-      <label>Nomor KTP</label>
+    <div class="form-group">
+    <div class="row">
+    <div class="col-6">
+    <label style="margin-bottom: 10px;">Nomor KTP</label>
       <input type="number" name="no_ktp" class="form-control">
     </div>
+    
     <div class="form-group">
-      <label>NPWP</label>
+    <div class="row">
+    <div class="col-6">
+    <label style="margin-bottom: 10px;">NPWP</label>
       <input type="number" name="npwp" class="form-control">
     </div>
+    
     <div class="form-group">
-      <label>Alamat</label>
+     <div class="row">
+    <div class="col-6"> 
+    <label style="margin-bottom: 10px;">Alamat</label>
       <textarea name="alamat" class="form-control"></textarea>  
     </div>
+
     <div class="form-group">
-      <label>Telepon/No. HP</label>
+    <div class="row">
+    <div class="col-6">
+    <label style="margin-bottom: 10px">Telepon/No. HP</label>
       <input type="number" name="no_hp" class="form-control">
     </div>
+
+    <div class="form-group">
+    <div class="row">
+    <div class="col-6">
     <label>Dalam Hal Ini Bertindak Sebagai</label>
       <div class="form-check">
       <input class="form-check-input" type="radio" name="bertindak_sebagai" value="Diri Sendiri" id="bertindak1">
@@ -114,6 +184,7 @@
       <option value="Saudara">Saudara</option>
      </select>
     </div>
+
     <label>Tujuan Pembukaan Rekening</label>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="tujuan_buka_rekening" value="Saving" id="buka1">
@@ -143,9 +214,8 @@
       </div>
     </div>
   </div>
-    </div>
-  </div>
- 
+</div>
+
 <div class="card-header text-white bg-primary">
   <h5>B. PRODUK YANG DIBUKA</h5>
 </div>
@@ -411,37 +481,74 @@
     </ul>
   </div>
 </div>
-  <div class="card-header text-white bg-primary">
-    <h5>F. PERNYATAAN NASABAH</h5>
+
+<div class="card-header text-white bg-primary">
+    <h5>E. PEMBUKAAN DEPOSITO</h5>
   </div>
   <div class="card-body">
-    Dengan ini nasabah menyatakan : <br>
-
-<p>1. Nasabah bertanggungjawab sepenuhnya atas data dan keterangan yang diberikan dan membebaskan PT. BPRS ALMASOEM dari segala tuntutan dan/atau gugatan dalam bentuk apapun dan dari pihak manapun termasuk dari nasabah, sehubungan dengan pengisian Formulir Pembukaan Rekening</p>
-
-<p>2. PT.BPRS ALMASOEM telah memberikan penjelasan yang cukup mengenai karakteristik produk diantaranya tenggat, resiko dan biaya-biaya yang melekat dan nasabah telah membaca, mengerti dan menyetujui isi ketentuan-ketentuan dan klasifikasi yang terkait dengan produk yang nasabah ajukan seperti tertuang dalam syarat dan ketentuan pembukaan rekening beserta syarat dan ketentuan pemohon.</p>
-
-<p>3. Memberikan kuasa kepada Bank yang tidak dapat dibatalkan secara sepihak oleh nasabah sesuai ketentuan undang-undang hukum pidana untuk: <br>
-a. Mendebit rekening tersebut dalam rangka pembayaran maupun beban yang timbul dari produk maupun kontraknya <br>
-b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan rekening dan/atau oleh sebab-sebab lainnya</p>
-
-<p>4. Tunduk pada syarat dan ketentuan yang berlaku pada BANK sebagaimana yang tertuang berserta segala perubahannya yang merupakan bagian dan menjadi satu kesatuan yang tidak terjelaskan dari Formulir Aplikasi ini.</p>
-
-  </div>
-  <div class="card-header text-white bg-primary">
-    <h5>G. UPLOAD DOKUMEN</h5>
-  </div>
-   <div class="card-body">
-     <div class="form-group">
-    <label for="exampleFormControlFile1">Upload/Unggah Foto/Scan KTP Asli</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <div class="form-group">
+      <div class="row">
+    <div class="col-6">
+      <label style="margin-bottom: 10px">Nominal Setoran</label>
+      <input type="text" name="" placeholder="Rp. ..." class="form-control">
     </div>
+
+  <div class="form-group">
+    <div class="row">
+    <div class="col-6">
+    <label style="margin-bottom: 10px">Mata Uang</label>
+    <input type="text" name="" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+    <div class="col-6">
+    <label style="margin-bottom: 10px">Jangka Waktu</label>
+    <select name="" class="form-select">
+      <option value="">Pilih Jangka Waktu</option>
+      <option value="">1 Bulan</option>
+      <option value="">3 Bulan</option>
+      <option value="">6 Bulan</option>
+      <option value="">12 Bulan</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+    <div class="col-6">
+    <label style="margin-bottom: 10px">Pembayaran Bagi Hasil</label>
+    <select name="" class="form-select">
+      <option value="">Pilih Pembayaran Bagi Hasil</option>
+      <option value="">Dibukukan pada Tabungan</option>
+      <option value="">Dibayar pada cabang / Bank</option>
+    </select>
+
+    Nomor Rekening Pembayaran Bagi Hasil
+    <input type="number" name="" class="form-control">
+  
+    <label style="margin-bottom: 10px">Perpanjang Otomatis</label>
+     <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault">
+      Ya
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault">
+      Tidak
+  </div>
+  <div class="form-group">
+    <label style="margin-bottom: 10px">Ahli Waris</label>
+    <input type="text" name="" class="form-control">
+  </div>
+  <div class="form-group">
+    <label style="margin-bottom: 10px">Hubungan Dengan Ahli Waris</label>
+    <input type="text" name="" class="form-control">
+  </div>
+  </div>
+  </div>
+
 </div>
 <div class="card-footer">
   <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 </div>
 </div>
-
-@include('sweetalert::alert')
 @endsection

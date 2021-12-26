@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\DataNasabahController;
 use App\Http\Controllers\WadiahController;
+use App\Http\Controllers\DepositoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/form', function () {
 Route::resource('/', FormulirController::class);
 Route::resource('/nasabah', DataNasabahController::class);
 Route::resource('/wadiah', WadiahController::class);
+Route::resource('/deposito', DepositoController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

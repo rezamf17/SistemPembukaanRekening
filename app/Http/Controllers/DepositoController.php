@@ -8,7 +8,7 @@ use App\Models\NasabahPerorang;
 use App\Models\NasabahBadan;
 use App\Models\Formulir;
 
-class FormulirController extends Controller
+class DepositoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class FormulirController extends Controller
      */
     public function index()
     {
-        return view('formulir');
+        return view ('deposito');
     }
 
     /**
@@ -52,11 +52,7 @@ class FormulirController extends Controller
         $identitas->bertindak_sebagai = $request->bertindak_sebagai;
         $identitas->tujuan_buka_rekening = $request->tujuan_buka_rekening;
         $identitas->jenis_simpanan = $request->jenis_simpanan;
-        if ($request->nama == null) {
-            
-        }else{
-            $identitas->save();
-        }
+        $identitas->save();
 
         $perorang = new NasabahPerorang;
         $perorang->sumber_penghasilan = $request->sumber_penghasilan;

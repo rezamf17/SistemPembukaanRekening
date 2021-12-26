@@ -15,7 +15,6 @@ class CreateIdentitasNasabahsTable extends Migration
     {
         Schema::create('identitas_nasabah', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_cabang')->constrained('cabang')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama');
             $table->string('jenis_kelamin');
             $table->string('nama_ibu');
