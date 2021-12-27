@@ -7,6 +7,7 @@ use App\Models\IdentitasNasabah;
 use App\Models\NasabahPerorang;
 use App\Models\NasabahBadan;
 use App\Models\Formulir;
+use App\Models\Deposito;
 
 class DepositoController extends Controller
 {
@@ -52,7 +53,11 @@ class DepositoController extends Controller
         $identitas->bertindak_sebagai = $request->bertindak_sebagai;
         $identitas->tujuan_buka_rekening = $request->tujuan_buka_rekening;
         $identitas->jenis_simpanan = $request->jenis_simpanan;
-        $identitas->save();
+        if ($request->nama == null) {
+            
+        }else{
+            $identitas->save();
+        }
 
         $perorang = new NasabahPerorang;
         $perorang->sumber_penghasilan = $request->sumber_penghasilan;
@@ -96,14 +101,27 @@ class DepositoController extends Controller
         $formulir->id_nasabah_badan = $badan->id;
         $formulir->save();
 
+        $deposito = new Deposito;
+        $deposito->no_rekening_pemilik = $request->no_rekening_pemilik;
+        $deposito->atas_nama = $request->atas_nama;
+        $deposito->mata_uang = $request->mata_uang;
+        $deposito->jangka_waktu = $request->jangka_waktu;
+        $deposito->pembayaran_bagi_hasil = $request->pembayaran_bagi_hasil;
+        $deposito->no_rek_bagi_hasil = $request->no_rek_bagi_hasil;
+        $deposito->perpanjang_otomatis = $request->perpanjang_otomatis;
+        $deposito->ahli_waris = $request->ahli_waris;
+        $deposito->hubungan_dgn_ahli_waris = $request->hubungan_dgn_ahli_waris;
+        $deposito->save();
+
         if ($request->jenis_simpanan == "Simpanan Wadiah") {
             return redirect('/wadiah')->with('success', 'Berhasil');
-        }
-        if ($request->jenis_simpanan == "Simpanan Mudharabah") {
+        }elseif ($request->jenis_simpanan == "Simpanan Mudharabah") {
             return redirect('/mudharabah')->with('success', 'Berhasil');
+        }else{
+            return redirect('/deposito')->with('success', 'Berhasil');
         }
         // return $badan;
-        // return $perorang;
+        // return $request;
     }
 
     /**
