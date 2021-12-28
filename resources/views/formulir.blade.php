@@ -1,7 +1,7 @@
 @extends('layouts.FormTemplate')
 @section('content')
 <div class="card">
-  <form action="{{ url('/') }}" method="post" onsubmit="return confirm('Anda yakin sudah mengisi data dengan benar?')" accept-charset="utf-8">
+  <form action="{{ url('/') }}" method="post" onsubmit="return confirm('Anda yakin sudah mengisi data dengan benar?')" accept-charset="utf-8" enctype="multipart/form-data">
     @csrf
   <div class="card-header text-center text-white bg-primary">
     <img src="{{asset('style/img/bprs.png')}}" class="img-fluid" alt="Responsive image">
@@ -434,7 +434,7 @@ b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan r
    <div class="card-body">
      <div class="form-group">
     <label for="exampleFormControlFile1">Upload/Unggah Foto/Scan KTP Asli</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
     </div>
 </div>
 <div class="card-footer">

@@ -7,6 +7,7 @@ use App\Models\IdentitasNasabah;
 use App\Models\NasabahPerorang;
 use App\Models\NasabahBadan;
 use App\Models\Formulir;
+use App\Models\File;
 
 class FormulirController extends Controller
 {
@@ -52,6 +53,7 @@ class FormulirController extends Controller
         $identitas->bertindak_sebagai = $request->bertindak_sebagai;
         $identitas->tujuan_buka_rekening = $request->tujuan_buka_rekening;
         $identitas->jenis_simpanan = $request->jenis_simpanan;
+
         if ($request->nama == null) {
             
         }else{
@@ -93,12 +95,17 @@ class FormulirController extends Controller
             $badan->save();
         }
 
+        $file = new File;
+        $file->name = $request->file('file')->store('ktp');
+        $file->save();
+
         $formulir = new Formulir;
         $formulir->id_cabang = $request->id_cabang;
         $formulir->id_identitas_nasabah = $identitas->id;
         $formulir->id_nasabah_perorang = $perorang->id;
         $formulir->id_nasabah_badan = $badan->id;
         $formulir->save();
+
 
         if ($request->jenis_simpanan == "Simpanan Wadiah") {
             return redirect('/wadiah')->with('success', 'Berhasil');
