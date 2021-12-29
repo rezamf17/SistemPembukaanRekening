@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\IdentitasNasabah;
 use App\Models\NasabahPerorang;
+use App\Models\File;
 
 class Formulir extends Model
 {
@@ -19,5 +20,9 @@ class Formulir extends Model
     public function nasabah_perorang()
     {
         return $this->belongsTo(NasabahPerorang::class, 'id_nasabah_perorang');
+    }
+    public function files()
+    {
+        return $this->belongsTo(File::class, 'id_files');
     }
 }

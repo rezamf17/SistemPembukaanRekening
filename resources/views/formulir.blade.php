@@ -24,10 +24,12 @@
       <option value="6">Majalaya</option>
       <option value="7">Rancaekek</option>
     </select>
-    <label>Pilih Jenis Rekening</label> <br>
-    <button onclick="nasabah()" type="button" class="btn btn-primary">Rekening Nasabah Perorangan</button>
-    <button onclick="badan()" type="button" class="btn btn-danger">Rekening Nasabah Badan</button>
-    <p id="status"></p>
+    <div class="text-center">
+      <label>Silahkan Pilih Kategori Nasabah</label> <br>
+      <button onclick="nasabah()" type="button" class="btn btn-primary">Rekening Nasabah Perorangan</button>
+      <button onclick="badan()" type="button" class="btn btn-danger">Rekening Nasabah Badan</button>
+      <p id="status"></p>
+    </div>
   </div>
   <div class="card-header text-white bg-primary">
     <h5>A. IDENTITAS NASABAH</h5>
@@ -152,16 +154,48 @@
 <div class="card-body">
   <label>Jenis Simpanan</label>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Wadiah">
+    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Wadiah" id="simpanan_wadiah">
     <label class="form-check-label" for="flexRadioDefault1">
       Simpanan Wadiah
     </label>
-  </div>
+    <div class="form-group">
+      <label>Jenis Tabungan</label> <br>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah1">
+        Reguler/Umum 
+      </div>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah2">
+        Siswa
+      </div>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah3">
+        Payroll 
+      </div>
+      {{-- <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah4">
+        lainnya
+        <input type="text" name="" class="tanggal-lahir">
+      </div> --}}
+    </div>
+  </div> <br>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Mudharabah">
+    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Mudharabah" id="simpanan_mudharabah">
     <label class="form-check-label" for="flexRadioDefault2">
       Simpanan Mudharabah
     </label>
+    <div class="form-group">
+      <label>Jenis Tabungan</label> <br>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah1">
+        Tabungan Mudharabah 
+        {{-- <input type="text" name="" class="tanggal-lahir"> --}}
+      </div>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah2">
+        Deposito Mudharabah
+      </div>
+    </div>
   </div>
 </div>
 
@@ -409,6 +443,21 @@
       <li class="list-group-item">3. <input type="text" name="pengurus3" class="form-control" id="badan_pengurus3"></li>
       <li class="list-group-item">4. <input type="text" name="pengurus4" class="form-control" id="badan_pengurus4"></li>
     </ul>
+  </div>
+  <div class="form-group">
+      <label>Pemotongan Zakat atas Bonus</label> <br>
+      <div class="form-check">
+        <input type="radio" name="zakat" class="form-check-input" id="zakat" value="2.5%">
+        Ya = 2,5% <br>
+        Angka Lainnya 
+        <input type="radio" name="zakat" class="form-check-input" id="zakat3"> 
+        <input type="text" name="zakat" class="zakat" id="zakat1" placeholder="....">
+      </div>
+
+      <div class="form-check">
+        <input type="radio" name="zakat" class="form-check-input" id="zakat2" value="Tidak">
+        Tidak
+      </div>
   </div>
 </div>
   <div class="card-header text-white bg-primary">

@@ -39,6 +39,7 @@ class FormulirController extends Controller
      */
     public function store(Request $request)
     {
+        // ddd($request);
         $identitas = new IdentitasNasabah;
         $identitas->nama = $request->nama;
         $identitas->jenis_kelamin = $request->jenis_kelamin;
@@ -53,6 +54,7 @@ class FormulirController extends Controller
         $identitas->bertindak_sebagai = $request->bertindak_sebagai;
         $identitas->tujuan_buka_rekening = $request->tujuan_buka_rekening;
         $identitas->jenis_simpanan = $request->jenis_simpanan;
+        $identitas->zakat = $request->zakat;
 
         if ($request->nama == null) {
             
@@ -104,6 +106,7 @@ class FormulirController extends Controller
         $formulir->id_identitas_nasabah = $identitas->id;
         $formulir->id_nasabah_perorang = $perorang->id;
         $formulir->id_nasabah_badan = $badan->id;
+        $formulir->id_files = $file->id;
         $formulir->save();
 
 

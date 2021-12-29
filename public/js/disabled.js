@@ -180,3 +180,20 @@ bertindak2.addEventListener("change", (e) => {
 	 		const value = e.currentTarget.value;
 	 		bertindak3.disabled = false;
 	 	})
+
+const zakat = document.getElementById("zakat");
+const zakat1 = document.getElementById("zakat1");
+const zakat2 = document.getElementById("zakat2");
+
+zakat.addEventListener("change", (e) => {
+	 		const value = e.currentTarget.value;
+	 		zakat1.disabled = true;
+	 	})
+zakat2.addEventListener("change", (e) => {
+	 		const value = e.currentTarget.value;
+	 		zakat1.disabled = true;
+	 	})
+zakat3.addEventListener("change", (e) => {
+	 		const value = e.currentTarget.value;
+	 		zakat1.disabled = false;
+	 	})

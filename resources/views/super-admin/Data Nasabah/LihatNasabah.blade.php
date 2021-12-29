@@ -63,8 +63,12 @@ Lihat Data Nasabah
                     <td>{{$formulir->identitas_nasabah->jenis_simpanan}}</td>
                 </tr>
                 <tr>
-                    <th>Sumber Penghasilan</th>
-                    <td>{{$formulir->identitas_nasabah->jenis_simpanan}}</td>
+                    <th>Pemotongan Zakat</th>
+                    <td>{{$formulir->identitas_nasabah->zakat}}</td>
+                </tr>
+                <tr>
+                    <th>Foto/Scan KTP</th>
+                    <td><img src="{{ asset('storage/'.$formulir->files->name) }}" alt=""></td>
                 </tr>
             </table>
         </div>
