@@ -27,7 +27,6 @@ class CreateIdentitasNasabahsTable extends Migration
             $table->string('no_hp');
             $table->string('bertindak_sebagai');
             $table->string('tujuan_buka_rekening');
-            $table->string('jenis_simpanan');
             $table->string('zakat');
             $table->timestamps();
         });

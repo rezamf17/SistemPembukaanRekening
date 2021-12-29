@@ -8,6 +8,7 @@ use App\Models\NasabahPerorang;
 use App\Models\NasabahBadan;
 use App\Models\Formulir;
 use App\Models\File;
+use App\Models\JenisSimpanan;
 
 class FormulirController extends Controller
 {
@@ -53,14 +54,17 @@ class FormulirController extends Controller
         $identitas->no_hp = $request->no_hp;
         $identitas->bertindak_sebagai = $request->bertindak_sebagai;
         $identitas->tujuan_buka_rekening = $request->tujuan_buka_rekening;
-        $identitas->jenis_simpanan = $request->jenis_simpanan;
         $identitas->zakat = $request->zakat;
-
         if ($request->nama == null) {
             
         }else{
             $identitas->save();
         }
+
+        $jenis_simpanan = new JenisSimpanan;
+        $jenis_simpanan->jenis_simpanan = $request->jenis_simpanan;
+        $jenis_simpanan->jenis_tabungan = $request->jenis_tabungan;
+        $jenis_simpanan->save();
 
         $perorang = new NasabahPerorang;
         $perorang->sumber_penghasilan = $request->sumber_penghasilan;
@@ -111,10 +115,10 @@ class FormulirController extends Controller
 
 
         if ($request->jenis_simpanan == "Simpanan Wadiah") {
-            return redirect('/wadiah')->with('success', 'Berhasil');
+            return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
         }
         if ($request->jenis_simpanan == "Simpanan Mudharabah") {
-            return redirect('/mudharabah')->with('success', 'Berhasil');
+            return redirect('/mudharabah')->with('success', 'Pengisian Formulir Berhasil');
         }
         // return $badan;
         // return $perorang;

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\CabangSeeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,7 +20,7 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'reza',
             'email' => 'rezayuyara@gmail.com',
-            'password' => 'reza1234'
+            'password' => Hash::make('reza1234')
         ]);
         $this->call([
             CabangSeeder::class,

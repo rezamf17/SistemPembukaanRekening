@@ -10,7 +10,7 @@
   <div class="card-body">
     <div class="text-center">
     <label>Pilih Jenis Rekening</label> <br>
-    <a href="{{ url('/') }}" class="btn btn-primary btn-lg text-center">REKENING TABUNGAN</a>
+    <a href="#" class="btn btn-primary btn-lg text-center">REKENING TABUNGAN</a>
     <a href="{{ url('/deposito') }}" class="btn btn-secondary btn-lg text-center">REKENING DEPOSITO</a> <br>
     </div>
     <label>Pilihan Kantor Cabang </label>
@@ -161,15 +161,15 @@
     <div class="form-group">
       <label>Jenis Tabungan</label> <br>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah1">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah1" value="Reguler/Umum">
         Reguler/Umum 
       </div>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah2">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah2" value="Siswa">
         Siswa
       </div>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah3">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah3" value="Payroll">
         Payroll 
       </div>
       {{-- <div class="form-check">
@@ -187,12 +187,12 @@
     <div class="form-group">
       <label>Jenis Tabungan</label> <br>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah1">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah1" value="Tabungan Mudharabah">
         Tabungan Mudharabah 
         {{-- <input type="text" name="" class="tanggal-lahir"> --}}
       </div>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah2">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah2" value="Deposito Mudharabah">
         Deposito Mudharabah
       </div>
     </div>
@@ -444,21 +444,6 @@
       <li class="list-group-item">4. <input type="text" name="pengurus4" class="form-control" id="badan_pengurus4"></li>
     </ul>
   </div>
-  <div class="form-group">
-      <label>Pemotongan Zakat atas Bonus</label> <br>
-      <div class="form-check">
-        <input type="radio" name="zakat" class="form-check-input" id="zakat" value="2.5%">
-        Ya = 2,5% <br>
-        Angka Lainnya 
-        <input type="radio" name="zakat" class="form-check-input" id="zakat3"> 
-        <input type="text" name="zakat" class="zakat" id="zakat1" placeholder="....">
-      </div>
-
-      <div class="form-check">
-        <input type="radio" name="zakat" class="form-check-input" id="zakat2" value="Tidak">
-        Tidak
-      </div>
-  </div>
 </div>
   <div class="card-header text-white bg-primary">
     <h5>F. PERNYATAAN NASABAH</h5>
@@ -475,6 +460,21 @@ a. Mendebit rekening tersebut dalam rangka pembayaran maupun beban yang timbul d
 b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan rekening dan/atau oleh sebab-sebab lainnya</p>
 
 <p>4. Tunduk pada syarat dan ketentuan yang berlaku pada BANK sebagaimana yang tertuang berserta segala perubahannya yang merupakan bagian dan menjadi satu kesatuan yang tidak terjelaskan dari Formulir Aplikasi ini.</p>
+ <div class="form-group">
+      <label>Pemotongan Zakat atas Bonus</label> <br>
+      <div class="form-check">
+        <input type="radio" name="zakat" class="form-check-input" id="zakat" value="2.5%">
+        Ya = 2,5% <br>
+        Angka Lainnya 
+        <input type="radio" name="zakat" class="form-check-input" id="zakat3"> 
+        <input type="text" name="zakat" class="zakat" id="zakat1" placeholder="....">
+      </div>
+
+      <div class="form-check">
+        <input type="radio" name="zakat" class="form-check-input" id="zakat2" value="Tidak">
+        Tidak
+      </div>
+  </div>
 
   </div>
   <div class="card-header text-white bg-primary">
