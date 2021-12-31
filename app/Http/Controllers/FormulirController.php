@@ -130,7 +130,7 @@ class FormulirController extends Controller
             return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'alamat', 'zakat'));
         }
         if ($request->jenis_simpanan == "Simpanan Mudharabah") {
-            return redirect('/mudharabah')->with('success', 'Pengisian Formulir Berhasil');
+             return view('mudharabah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'alamat', 'zakat'));
         }
         // return $badan;
         // return $perorang;
