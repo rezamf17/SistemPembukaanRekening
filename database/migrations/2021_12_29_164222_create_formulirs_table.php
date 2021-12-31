@@ -17,6 +17,7 @@ class CreateFormulirsTable extends Migration
             $table->id();
             $table->foreignId('id_cabang')->constrained('cabang')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('id_identitas_nasabah')->nullable()->constrained('identitas_nasabah')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_jenis_simpanan')->nullable()->constrained('jenis_simpanan')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('id_nasabah_perorang')->nullable()->constrained('nasabah_perorang')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('id_nasabah_badan')->nullable()->constrained('nasabah_badan')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('id_files')->nullable()->constrained('files')->onUpdate('cascade')->onDelete('cascade');

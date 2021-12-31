@@ -11,9 +11,11 @@ class WadiahController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('wadiah');
+        $nama = $request->nama;
+        $jenis_tabungan = $request->jenis_tabungan;
+        return view('wadiah', compact('nama', 'jenis_tabungan'));
     }
 
     /**

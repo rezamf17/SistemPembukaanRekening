@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\IdentitasNasabah;
 use App\Models\NasabahPerorang;
 use App\Models\File;
+use App\Models\JenisSimpanan;
 
 class Formulir extends Model
 {
@@ -24,5 +25,9 @@ class Formulir extends Model
     public function files()
     {
         return $this->belongsTo(File::class, 'id_files');
+    }
+    public function jenis_simpanan()
+    {
+        return $this->belongsTo(JenisSimpanan::class, 'id_jenis_simpanan');
     }
 }

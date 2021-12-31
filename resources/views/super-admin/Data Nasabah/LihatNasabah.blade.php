@@ -76,6 +76,22 @@ Lihat Data Nasabah
 </div>
 <br>
 <div class="card">
+    <div class="card-header">Data Produk Yang Dibuka</div>
+    <div class="card-body">
+        <table class="table">
+            <tr>
+                <th>Jenis Simpanan</th>
+                <td>{{$formulir->jenis_simpanan->jenis_simpanan}}</td>
+            </tr>
+            <tr>
+                <th>Jenis Tabungan</th>
+                <td>{{$formulir->jenis_simpanan->jenis_tabungan}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br>
+<div class="card">
     <div class="card-header">Data Nasabah Perorang</div>
     <div class="card-body">
         <table class="table">

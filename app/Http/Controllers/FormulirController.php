@@ -8,6 +8,7 @@ use App\Models\NasabahPerorang;
 use App\Models\NasabahBadan;
 use App\Models\Formulir;
 use App\Models\File;
+use App\Models\Cabang;
 use App\Models\JenisSimpanan;
 
 class FormulirController extends Controller
@@ -40,9 +41,17 @@ class FormulirController extends Controller
      */
     public function store(Request $request)
     {
-        // ddd($request);
+        // return $request;
+        $nama = $request->nama;
+        $jenis_tabungan = $request->jenis_tabungan;
+        $cabang = $request->id_cabang;
+        $tempat_lahir = $request->tempat_lahir;
+        $tanggal_lahir = $request->tanggal_lahir;
+        $no_ktp = $request->no_ktp;
+        $alamat = $request->alamat;
+        $zakat = $request->zakat;
         $identitas = new IdentitasNasabah;
-        $identitas->nama = $request->nama;
+        $identitas->nama = $nama;
         $identitas->jenis_kelamin = $request->jenis_kelamin;
         $identitas->nama_ibu = $request->nama_ibu;
         $identitas->status_kependudukan = $request->status_kependudukan;
@@ -63,7 +72,7 @@ class FormulirController extends Controller
 
         $jenis_simpanan = new JenisSimpanan;
         $jenis_simpanan->jenis_simpanan = $request->jenis_simpanan;
-        $jenis_simpanan->jenis_tabungan = $request->jenis_tabungan;
+        $jenis_simpanan->jenis_tabungan = $jenis_tabungan;
         $jenis_simpanan->save();
 
         $perorang = new NasabahPerorang;
@@ -107,6 +116,7 @@ class FormulirController extends Controller
 
         $formulir = new Formulir;
         $formulir->id_cabang = $request->id_cabang;
+        $formulir->id_jenis_simpanan = $jenis_simpanan->id;
         $formulir->id_identitas_nasabah = $identitas->id;
         $formulir->id_nasabah_perorang = $perorang->id;
         $formulir->id_nasabah_badan = $badan->id;
@@ -115,7 +125,9 @@ class FormulirController extends Controller
 
 
         if ($request->jenis_simpanan == "Simpanan Wadiah") {
-            return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
+            // return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
+            $data_cabang = Cabang::first();
+            return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'alamat', 'zakat'));
         }
         if ($request->jenis_simpanan == "Simpanan Mudharabah") {
             return redirect('/mudharabah')->with('success', 'Pengisian Formulir Berhasil');

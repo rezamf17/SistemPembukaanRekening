@@ -17,10 +17,10 @@ wadiah.addEventListener("change", (e) => {
 	 	})
 mudharabah.addEventListener("change", (e) => {
 	 		const value = e.currentTarget.value;
+	 		m1.disabled = false;
+	 		m2.disabled = false;
 	 		w1.disabled = true;
 	 		w2.disabled = true;
 	 		w3.disabled = true;
 	 		w4.disabled = true;
-	 		m1.disabled = false;
-	 		m2.disabled = false;
 	 	})

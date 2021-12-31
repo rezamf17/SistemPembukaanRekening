@@ -6,85 +6,56 @@
 		<h3 class="text-center">AKAD WADI'AH YAD DHAMANAH</h3>
 	</div>
 	<div class="card-body">
-		Bersama ini, saya selaku NASABAH permohonan pembukaan rekening tabungan dengan Akad Wadi'ah Yad Dhamanah Kepada BPRS ALMASOEM Cabang ...
+		Bersama ini, saya selaku NASABAH permohonan pembukaan rekening tabungan dengan Akad Wadi'ah Yad Dhamanah Kepada BPRS ALMASOEM Cabang
+		@if ($cabang == 1)
+			Arcamanik
+		@elseif($cabang == 2)
+			Cianjur
+		@elseif($cabang == 3)
+			Garut
+		@elseif($cabang == 4)
+			Jatiwangi
+		@elseif($cabang == 5)
+			Kopo
+		@elseif($cabang == 6)
+			Majalaya
+		@elseif($cabang == 7)
+			Rancaekek
+		@endif
 		(Selanjutnya disebut BANK) dengan rincian sebagai berikut:
 	</div>
 	<div class="card-header text-center text-white bg-warning"><h4>DATA NASABAH</h4></div>
 	<div class="card-body">
 		<div class="form-group">
 			<label>Nama Lengkap</label>
-			<input type="text" name="" class="form-control">	
+			<input type="text" name="nama" class="form-control" value="{{$nama}}">	
 		</div>
 		<div class="form-group">
 			<label>Jenis Tabungan</label> <br>
-			<div class="form-check">
-				<input type="radio" name="zakat" class="form-check-input">
-				Reguler/Umum 
-			</div>
-			<div class="form-check">
-				<input type="radio" name="zakat" class="form-check-input">
-				Siswa
-			</div>
-			<div class="form-check">
-				<input type="radio" name="zakat" class="form-check-input">
-				Payroll	
-			</div>
-			<div class="form-check">
-				<input type="radio" name="zakat" class="form-check-input">
-				lainnya
-				<input type="text" name="" class="tanggal-lahir">
-			</div>
+			<input type="text" name="jenis_tabungan" class="form-control" value="{{$jenis_tabungan}}">	
 		</div>
 		<div class="form-group">
 			<label>Tempat Lahir</label>
-			<input type="text" name="tempat_lahir" class="form-control">
+			<input type="text" name="jenis_tabungan" class="form-control" value="{{$tempat_lahir}}">
+			
 		</div>
 		<div >
 			<label>Tanggal Lahir</label> <br>
-			<div class="d-inline">
-				<label>DD</label>
-				<input type="number" pattern="[0-9]*" maxlength="2" size="2" class="tanggal-lahir" />
-			</div>
-			/
-			<div class="d-inline">
-				<label>MM</label>
-				<input type="number" pattern="[0-9]*" maxlength="2" size="2" class="tanggal-lahir" />
-			</div>
-			/
-			<div class="d-inline">
-				<label>YYYY</label>
-				<input type="number" pattern="[0-9]*" maxlength="4" size="4" class="tahun-lahir" />
-			</div>
+			<input type="text" name="jenis_tabungan" class="form-control" value="{{$tanggal_lahir}}">
 		</div>
 		<div class="form-group">
 			<label>No. KTP/Password</label>
-			<input type="number" name="" class="form-control">
+			<input type="number" name="" class="form-control" value="{{$no_ktp}}">
 			Masa Berlaku KTP/Password
 			<input type="date" name="" class="form-control">
 		</div>
 		<div class="form-group">
 			<label>Alamat</label>
-			<textarea name="" class="form-control"></textarea>
-			RT
-			<input type="number" name="" class="tanggal-lahir">
-			RW
-			<input type="number" name="" class="tanggal-lahir"> <br>
-			Desa/Kelurahan
-			<input type="text" name="" class="form-control">
-			Kecamatan
-			<input type="text" name="" class="form-control">
-			Kota/Kabupaten
-			<input type="text" name="" class="form-control">
-			Provinsi
-			<input type="text" name="" class="form-control">
+			<textarea name="" class="form-control">{{$alamat}}</textarea>
 		</div>
 		<div class="form-group">
 			<label>Pemotongan Zakat atau Bonus</label> <br>
-			<input type="radio" name="zakat" class="form-check-input">
-			Ya = 2.5% atau 
-			<input type="text" name="" class="tanggal-lahir">
-			<input type="radio" name="zakat" class="form-check-input">
-			Tidak
+			<input type="text" name="zakat" class="form-control" value="{{$zakat}}">
 		</div>
 	</div>
 	<div class="card-header text-center text-white bg-warning">
