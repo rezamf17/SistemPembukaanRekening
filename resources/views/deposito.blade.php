@@ -141,6 +141,11 @@
     <label style="margin-bottom: 10px;">Nomor KTP</label>
       <input type="number" name="no_ktp" class="form-control disable">
     </div>
+    <div class="row">
+    <div class="col-6">
+    <label style="margin-bottom: 10px;">Masa Berlaku KTP</label>
+      <input type="number" name="masa_berlaku" class="form-control disable">
+    </div>
     
     <div class="form-group">
     <div class="row">

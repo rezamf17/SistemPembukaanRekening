@@ -39,6 +39,10 @@ Lihat Data Nasabah
                     <td>{{$formulir->identitas_nasabah->no_ktp}}</td>
                 </tr>
                 <tr>
+                    <th>Masa Berlaku KTP</th>
+                    <td>{{$formulir->identitas_nasabah->masa_berlaku}}</td>
+                </tr>
+                <tr>
                     <th>NPWP</th>
                     <td>{{$formulir->identitas_nasabah->npwp}}</td>
                 </tr>

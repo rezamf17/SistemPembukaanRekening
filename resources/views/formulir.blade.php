@@ -84,6 +84,10 @@
       <input type="number" name="no_ktp" class="form-control">
     </div>
     <div class="form-group">
+      <label>Masa Berlaku KTP</label>
+      <input type="date" name="masa_berlaku" class="form-control">
+    </div>
+    <div class="form-group">
       <label>NPWP</label>
       <input type="number" name="npwp" class="form-control">
     </div>

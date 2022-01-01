@@ -47,6 +47,7 @@ class DepositoController extends Controller
         $identitas->tempat_lahir = $request->tempat_lahir;
         $identitas->tanggal_lahir = $request->tanggal_lahir;
         $identitas->no_ktp = $request->no_ktp;
+        $identitas->masa_berlaku = $request->masa_berlaku;
         $identitas->npwp = $request->npwp;
         $identitas->alamat = $request->alamat;
         $identitas->no_hp = $request->no_hp;

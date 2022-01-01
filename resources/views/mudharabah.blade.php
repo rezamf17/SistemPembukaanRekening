@@ -67,23 +67,13 @@
 
 		<p>2. NASABAH memberikan persetujuan/ijin kepada BANK untuk mengelola dana yang diinvestasikan pada BANK dan digunakan serta diambil manfaatnya oleh BANK sesuai dengan prinsip Mudharabah Mutlaqah tanpa batasan apapun dan digunakan sesuai prinsip syariah.</p>
 
-		<p>3. NASABAH dan BANK sepakat bahwa NASABAH hanya dapat melakukan penarikan dana sesuai dengan ketentuan yang berlaku pada BANK dan sepakat untuk berbagi hasil atas dana NASABAH yang ditempatkan tersebut dengan Nisbah bagi hasil sebesar
-		<input type="text" name="" class="tanggal-lahir"> 
-		% (terbilang 
-		<input type="text" name="" class="tanggal-lahir"> 
-		 persen) untuk Nasabah sebesar 
-		 <input type="text" name="" class="tanggal-lahir"> 
-		% (terbilang
-		<input type="text" name="" class="tanggal-lahir">  
-		 persen) untuk BANK yang akan dihitung, dibukukan, dan dibagikan secara bulanan berdasarkan prinsip distribusi bagi hasil.</p>
+		 <p>3. Ketentuan Nisbah bagi hasil tersebut di atas berlaku sampai dengan adanya perubahan nisbah bagi hasil yang disepakati antara BANK dan NASABAH</p>
 
-		 <p>4. Ketentuan Nisbah bagi hasil tersebut di atas berlaku sampai dengan adanya perubahan nisbah bagi hasil yang disepakati antara BANK dan NASABAH</p>
+		 <p>4. NASABAH setuju untuk memberikan data pribadinya untuk tujuan komersil lainnya, serta data disimpan di Tabungan dan/atau Deposito Mudharabah kepada pihak ketiga yang ditunjuk oleh BANK maupun perusahaan yang bekerjasama dengan BANK.</p>
 
-		 <p>5. NASABAH setuju untuk memberikan data pribadinya untuk tujuan komersil lainnya, serta data disimpan di Tabungan dan/atau Deposito Mudharabah kepada pihak ketiga yang ditunjuk oleh BANK maupun perusahaan yang bekerjasama dengan BANK.</p>
+		 <p>5. NASABAH dengan ini tunduk terikat pada Syariat dan Ketentuan UMUM Rekening BPRS ALMASOEM dan peraturan lain yang berlaku pada BANK, Bank Indonesia, OJK dan Dewan Fatwa Syariah Nasional Majelis Ulama Indonesia (DSN-MUI) yang merupakan satu kesatuan dan bagian yang tidak terpisahkan dan Akad.</p>
 
-		 <p>6. NASABAH dengan ini tunduk terikat pada Syariat dan Ketentuan UMUM Rekening BPRS ALMASOEM dan peraturan lain yang berlaku pada BANK, Bank Indonesia, OJK dan Dewan Fatwa Syariah Nasional Majelis Ulama Indonesia (DSN-MUI) yang merupakan satu kesatuan dan bagian yang tidak terpisahkan dan Akad.</p>
-
-		 <p>7. Bank sebagai Mudharib menutup biaya operasional yang bersumber dari / menggunakan nisbah yang menjadi haknya Bank.</p>
+		 <p>6. Bank sebagai Mudharib menutup biaya operasional yang bersumber dari / menggunakan nisbah yang menjadi haknya Bank.</p>
 
 		 <p>Akad ini berlaku sejak tanggal dibukanya rekening Tabungan dan/atau Deposito Mudharabah sampai dengan tanggal berakhirnya Akad atau yang disebabkan oleh penutupan rekening tersebut atas sebab apapun dan/atau sebab lain yang diatur dalam ketentuan produk yang telah disepakati BANK dan NASABAH, termasuk diantaranya adalah sebab yang diatur dalam hukum dan sebab kabar (force majeure). Akad ini merupakan satu kesatuan dan bagian yang tidak terpisah dengan Costumer Information File (CIF)</p>
 	</div>
