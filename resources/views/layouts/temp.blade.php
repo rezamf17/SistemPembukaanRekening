@@ -21,7 +21,7 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('style/css/sb-admin-2.min.css')}}" rel="stylesheet">
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="{{ asset('style/vendor/datatables/dataTables.bootstrap4.min.css') }} " rel="stylesheet">
 
 </head>
 
@@ -61,12 +61,29 @@
                 </div>
 
                 <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="{{ url('/nasabah') }}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Data Form Nasabah</span>
-                </a>
-            </li>
+                
+                @if(auth()->user()->role == 'super_admin')
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="{{ url('/KelolaAkun') }}">
+                        <i class="fas fa-fw fa-users"></i>
+                        <span>Kelola Data Akun</span>
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="{{ url('/nasabah') }}">
+                        <i class="fas fa-fw fa-user"></i>
+                        <span>Data Form Nasabah</span>
+                    </a>
+                    </li>
+                @endif
+                @if(auth()->user()->role == 'admin')
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="{{ url('/nasabahCabang/'.Auth::user()->id_cabang) }}">
+                        <i class="fas fa-fw fa-user"></i>
+                        <span>Data Form Nasabah</span>
+                    </a>
+                    </li>
+                @endif
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
@@ -257,7 +274,30 @@ aria-hidden="true">
 <!-- Page level plugins -->
     <script src="{{ asset('style/vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('style/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
-
+    <script src="{{ asset('style/js/demo/datatables-demo.js') }} "></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    $('.delete').click(function (){
+        const dataId = $(this).attr('data-id');
+                swal({
+          title: "Anda yakin?",
+          text: `Anda yakin ingin menghapus data akun ${dataId} ?`,
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            window.location = "/KelolaAkunHapus/"+dataId+""
+            swal("Data berhasil dihapus!", {
+              icon: "success",
+            });
+          } else {
+            swal("Data akun tidak jadi dihapus");
+          }
+        });
+    })
+</script>
 </body>
 
 </html>

@@ -18,9 +18,11 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'id_cabang',
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -41,4 +43,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function cabang()
+    {
+        return $this->belongsTo(Cabang::class, 'id_cabang');
+    }
 }

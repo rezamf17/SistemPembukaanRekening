@@ -17,22 +17,24 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $this->call([
+            CabangSeeder::class,
+        ]);
         DB::table('users')->insert([
             [
+                'id_cabang' => 7,
                 'name' => 'reza',
                 'email' => 'rezayuyara@gmail.com',
                 'password' => Hash::make('reza1234'),
                 'role' => 'super_admin'
             ],
             [
+                'id_cabang' => 6,
                 'name' => 'nelian mayhana',
                 'email' => 'nelianmayhana@gmail.com',
                 'password' => Hash::make('nelian1234'),
                 'role' => 'admin'
             ],
-        ]);
-        $this->call([
-            CabangSeeder::class,
         ]);
     }
 }

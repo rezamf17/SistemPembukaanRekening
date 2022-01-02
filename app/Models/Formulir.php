@@ -8,6 +8,7 @@ use App\Models\IdentitasNasabah;
 use App\Models\NasabahPerorang;
 use App\Models\File;
 use App\Models\JenisSimpanan;
+use App\Models\Cabang;
 
 class Formulir extends Model
 {
@@ -29,5 +30,9 @@ class Formulir extends Model
     public function jenis_simpanan()
     {
         return $this->belongsTo(JenisSimpanan::class, 'id_jenis_simpanan');
+    }
+    public function cabang()
+    {
+        return $this->belongsTo(Cabang::class, 'id_cabang');
     }
 }

@@ -6,6 +6,8 @@ use App\Http\Controllers\DataNasabahController;
 use App\Http\Controllers\WadiahController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NasabahCabangController;
+use App\Http\Controllers\KelolaAkunController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +30,12 @@ Route::get('/form', function () {
 });
 Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
     Route::resource('/nasabah', DataNasabahController::class);
+    Route::resource('/KelolaAkun', KelolaAkunController::class);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/KelolaAkunHapus/{id}', [KelolaAkunController::class, 'delete'])->name('delete');
 });
 Route::group(['middleware' => ['auth', 'role:admin']], function() {
-    // Route::resource('/nasabah', DataNasabahController::class);
+    Route::resource('/nasabahCabang', NasabahCabangController::class);
     Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
 });
 Route::resource('/', FormulirController::class);
