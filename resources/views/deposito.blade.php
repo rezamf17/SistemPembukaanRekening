@@ -27,9 +27,9 @@
         YA
       </label>
       <label>Nomor Rekening</label>
-      <input type="number" name="no_rekening_pemilik" class="form-control"> 
+      <input type="number" name="no_rekening_pemilik" class="form-control nomor"> 
       <label>Atas Nama</label>
-      <input type="text" name="atas_nama" class="form-control">  
+      <input type="text" name="atas_nama" class="form-control nama">  
     </div>
     <div class="form-check">
       <input class="form-check-input no" type="radio" name="status_kepemilikan">

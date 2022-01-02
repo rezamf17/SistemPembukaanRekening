@@ -5,6 +5,7 @@ use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\DataNasabahController;
 use App\Http\Controllers\WadiahController;
 use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,16 @@ Route::get('/mudharabah', function () {
 Route::get('/form', function () {
     return view('form');
 });
+Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
+    Route::resource('/nasabah', DataNasabahController::class);
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+Route::group(['middleware' => ['auth', 'role:admin']], function() {
+    // Route::resource('/nasabah', DataNasabahController::class);
+    Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
+});
 Route::resource('/', FormulirController::class);
-Route::resource('/nasabah', DataNasabahController::class);
 Route::resource('/wadiah', WadiahController::class);
 Route::resource('/deposito', DepositoController::class);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

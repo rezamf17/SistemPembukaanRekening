@@ -18,9 +18,18 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         DB::table('users')->insert([
-            'name' => 'reza',
-            'email' => 'rezayuyara@gmail.com',
-            'password' => Hash::make('reza1234')
+            [
+                'name' => 'reza',
+                'email' => 'rezayuyara@gmail.com',
+                'password' => Hash::make('reza1234'),
+                'role' => 'super_admin'
+            ],
+            [
+                'name' => 'nelian mayhana',
+                'email' => 'nelianmayhana@gmail.com',
+                'password' => Hash::make('nelian1234'),
+                'role' => 'admin'
+            ],
         ]);
         $this->call([
             CabangSeeder::class,

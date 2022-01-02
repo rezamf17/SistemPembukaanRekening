@@ -38,9 +38,13 @@
     $( ".disable" ).prop("disabled", true);
    $( ".yes" ).click(function() {
       $( ".disable" ).prop("disabled", true);
+      $( ".nama" ).prop("disabled", false);
+      $( ".nomor" ).prop("disabled", false);
     });
    $( ".no" ).click(function() {
       $( ".disable" ).prop("disabled", false);
+      $( ".nama" ).prop("disabled", true);
+      $( ".nomor" ).prop("disabled", true);
     });
   </script>
 </body>
