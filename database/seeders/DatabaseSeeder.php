@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Database\Seeders\CabangSeeder;
+use Database\Seeders\RekeningTabunganSeeder;
+use Database\Seeders\RekeningDepositoSeeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,6 +21,8 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call([
             CabangSeeder::class,
+            RekeningTabunganSeeder::class,
+            RekeningDepositoSeeder::class,
         ]);
         DB::table('users')->insert([
             [

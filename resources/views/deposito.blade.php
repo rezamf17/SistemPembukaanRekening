@@ -144,7 +144,7 @@
     <div class="row">
     <div class="col-6">
     <label style="margin-bottom: 10px;">Masa Berlaku KTP</label>
-      <input type="number" name="masa_berlaku" class="form-control disable">
+      <input type="date" name="masa_berlaku" class="form-control disable">
     </div>
     
     <div class="form-group">
@@ -230,16 +230,48 @@
 <div class="card-body">
   <label>Jenis Simpanan</label>
   <div class="form-check">
-    <input class="form-check-input disable" type="radio" name="jenis_simpanan" value="Simpanan Wadiah">
+    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Wadiah" id="simpanan_wadiah">
     <label class="form-check-label" for="flexRadioDefault1">
       Simpanan Wadiah
     </label>
-  </div>
+    <div class="form-group">
+      <label>Jenis Tabungan</label> <br>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah1" value="Reguler/Umum">
+        Reguler/Umum 
+      </div>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah2" value="Siswa">
+        Siswa
+      </div>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah3" value="Payroll">
+        Payroll 
+      </div>
+      {{-- <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah4">
+        lainnya
+        <input type="text" name="" class="tanggal-lahir">
+      </div> --}}
+    </div>
+  </div> <br>
   <div class="form-check">
-    <input class="form-check-input disable" type="radio" name="jenis_simpanan" value="Simpanan Mudharabah">
+    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Mudharabah" id="simpanan_mudharabah">
     <label class="form-check-label" for="flexRadioDefault2">
       Simpanan Mudharabah
     </label>
+    <div class="form-group">
+      <label>Jenis Tabungan</label> <br>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah1" value="Tabungan Mudharabah">
+        Tabungan Mudharabah 
+        {{-- <input type="text" name="" class="tanggal-lahir"> --}}
+      </div>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah2" value="Deposito Mudharabah">
+        Deposito Mudharabah
+      </div>
+    </div>
   </div>
 </div>
 
@@ -554,6 +586,47 @@
   </div>
   </div>
 
+</div>
+ <div class="card-header text-white bg-primary">
+    <h5>F. PERNYATAAN NASABAH</h5>
+  </div>
+  <div class="card-body">
+    Dengan ini nasabah menyatakan : <br>
+
+<p>1. Nasabah bertanggungjawab sepenuhnya atas data dan keterangan yang diberikan dan membebaskan PT. BPRS ALMASOEM dari segala tuntutan dan/atau gugatan dalam bentuk apapun dan dari pihak manapun termasuk dari nasabah, sehubungan dengan pengisian Formulir Pembukaan Rekening</p>
+
+<p>2. PT.BPRS ALMASOEM telah memberikan penjelasan yang cukup mengenai karakteristik produk diantaranya tenggat, resiko dan biaya-biaya yang melekat dan nasabah telah membaca, mengerti dan menyetujui isi ketentuan-ketentuan dan klasifikasi yang terkait dengan produk yang nasabah ajukan seperti tertuang dalam syarat dan ketentuan pembukaan rekening beserta syarat dan ketentuan pemohon.</p>
+
+<p>3. Memberikan kuasa kepada Bank yang tidak dapat dibatalkan secara sepihak oleh nasabah sesuai ketentuan undang-undang hukum pidana untuk: <br>
+a. Mendebit rekening tersebut dalam rangka pembayaran maupun beban yang timbul dari produk maupun kontraknya <br>
+b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan rekening dan/atau oleh sebab-sebab lainnya</p>
+
+<p>4. Tunduk pada syarat dan ketentuan yang berlaku pada BANK sebagaimana yang tertuang berserta segala perubahannya yang merupakan bagian dan menjadi satu kesatuan yang tidak terjelaskan dari Formulir Aplikasi ini.</p>
+ <div class="form-group">
+      <label>Pemotongan Zakat atas Bonus</label> <br>
+      <div class="form-check">
+        <input type="radio" name="zakat" class="form-check-input" id="zakat" value="2.5%">
+        Ya = 2,5% <br>
+        Angka Lainnya 
+        <input type="radio" name="zakat" class="form-check-input" id="zakat3"> 
+        <input type="text" name="zakat" class="zakat" id="zakat1" placeholder="....">
+      </div>
+
+      <div class="form-check">
+        <input type="radio" name="zakat" class="form-check-input" id="zakat2" value="Tidak">
+        Tidak
+      </div>
+  </div>
+
+  </div>
+  <div class="card-header text-white bg-primary">
+    <h5>G. UPLOAD DOKUMEN</h5>
+  </div>
+   <div class="card-body">
+     <div class="form-group">
+    <label for="exampleFormControlFile1">Upload/Unggah Foto/Scan KTP Asli</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
+    </div>
 </div>
 <div class="card-footer">
   <button type="submit" class="btn btn-primary">Submit</button>

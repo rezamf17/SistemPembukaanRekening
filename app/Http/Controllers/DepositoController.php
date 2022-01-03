@@ -8,6 +8,7 @@ use App\Models\NasabahPerorang;
 use App\Models\NasabahBadan;
 use App\Models\Formulir;
 use App\Models\Deposito;
+use App\Models\JenisSimpanan;
 
 class DepositoController extends Controller
 {
@@ -19,6 +20,12 @@ class DepositoController extends Controller
     public function index()
     {
         return view ('deposito');
+    }
+
+    public function view()
+    {
+        $deposito = Deposito::all();
+        return view ('super-admin.Data Nasabah.DataNasabahDeposito', compact('deposito'));
     }
 
     /**
@@ -39,6 +46,15 @@ class DepositoController extends Controller
      */
     public function store(Request $request)
     {
+        $nama = $request->nama;
+        $jenis_tabungan = $request->jenis_tabungan;
+        $cabang = $request->id_cabang;
+        $tempat_lahir = $request->tempat_lahir;
+        $tanggal_lahir = $request->tanggal_lahir;
+        $no_ktp = $request->no_ktp;
+        $masa_berlaku = $request->masa_berlaku;
+        $alamat = $request->alamat;
+        $zakat = $request->zakat;
         $identitas = new IdentitasNasabah;
         $identitas->nama = $request->nama;
         $identitas->jenis_kelamin = $request->jenis_kelamin;
@@ -53,7 +69,7 @@ class DepositoController extends Controller
         $identitas->no_hp = $request->no_hp;
         $identitas->bertindak_sebagai = $request->bertindak_sebagai;
         $identitas->tujuan_buka_rekening = $request->tujuan_buka_rekening;
-        $identitas->jenis_simpanan = $request->jenis_simpanan;
+        $identitas->zakat = $request->zakat;
         if ($request->nama == null) {
             
         }else{
@@ -75,6 +91,11 @@ class DepositoController extends Controller
         }else{
             $perorang->save();
         }
+
+        $jenis_simpanan = new JenisSimpanan;
+        $jenis_simpanan->jenis_simpanan = $request->jenis_simpanan;
+        $jenis_simpanan->jenis_tabungan = $request->jenis_tabungan;
+        $jenis_simpanan->save();
 
         $badan = new NasabahBadan;
         $badan->bentuk_usaha = $request->bentuk_usaha;
@@ -115,11 +136,12 @@ class DepositoController extends Controller
         $deposito->save();
 
         if ($request->jenis_simpanan == "Simpanan Wadiah") {
-            return redirect('/wadiah')->with('success', 'Berhasil');
-        }elseif ($request->jenis_simpanan == "Simpanan Mudharabah") {
-            return redirect('/mudharabah')->with('success', 'Berhasil');
-        }else{
-            return redirect('/deposito')->with('success', 'Berhasil');
+            // return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
+            $data_cabang = Cabang::first();
+            return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
+        }
+        if ($request->jenis_simpanan == "Simpanan Mudharabah") {
+             return view('mudharabah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
         }
         // return $badan;
         // return $request;

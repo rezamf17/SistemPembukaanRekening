@@ -63,62 +63,51 @@
                 <!-- Nav Item - Pages Collapse Menu -->
                 
                 @if(auth()->user()->role == 'super_admin')
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="{{ url('/KelolaAkun') }}">
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="{{ url('/KelolaAkun') }}">
                         <i class="fas fa-fw fa-users"></i>
                         <span>Kelola Data Akun</span>
                     </a>
-                    </li>
+                </li>
                     <li class="nav-item">
-                        <a class="nav-link collapsed" href="{{ url('/nasabah') }}">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                        aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-user"></i>
                         <span>Data Form Nasabah</span>
                     </a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link collapsed" href="{{ url('/report') }}">
-                        <i class="fas fa-fw fa-file"></i>
-                        <span>Report</span>
-                    </a>
-                    </li>
-                @endif
-                @if(auth()->user()->role == 'admin')
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="{{ url('/nasabahCabang/'.Auth::user()->id_cabang) }}">
-                        <i class="fas fa-fw fa-user"></i>
-                        <span>Data Form Nasabah</span>
-                    </a>
-                    </li>
-                @endif
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Utilities</span>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-1 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ url('nasabah') }}">Data Rekening Tabungan</a>
+                        <a class="collapse-item" href="{{ url('rekeningDeposito') }}">Data Rekening Deposito</a>
+                    </div>
+                </div>
+            </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ url('/report') }}">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Report</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
-            </div>
-        </div>
-    </li>
+        </li>
+        @endif
+        @if(auth()->user()->role == 'admin')
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ url('/nasabahCabang/'.Auth::user()->id_cabang) }}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Data Form Nasabah</span>
+            </a>
+        </li>
+        @endif
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+<!-- Divider -->
+<hr class="sidebar-divider">
 
-    <!-- Heading -->
-    
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
+<!-- Heading -->
+
+<!-- Sidebar Toggler (Sidebar) -->
+<div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+</div>
 
 </ul>
 <!-- End of Sidebar -->
@@ -278,30 +267,30 @@ aria-hidden="true">
 <!-- Custom scripts for all pages-->
 <script src="{{asset('style/js/sb-admin-2.min.js')}}"></script>
 <!-- Page level plugins -->
-    <script src="{{ asset('style/vendor/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('style/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('style/js/demo/datatables-demo.js') }} "></script>
+<script src="{{ asset('style/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('style/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('style/js/demo/datatables-demo.js') }} "></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     $('.delete').click(function (){
         const dataId = $(this).attr('data-id');
-                swal({
+        swal({
           title: "Anda yakin?",
           text: `Anda yakin ingin menghapus data akun ${dataId} ?`,
           icon: "warning",
           buttons: true,
           dangerMode: true,
-        })
+      })
         .then((willDelete) => {
           if (willDelete) {
             window.location = "/KelolaAkunHapus/"+dataId+""
             swal("Data berhasil dihapus!", {
               icon: "success",
-            });
-          } else {
+          });
+        } else {
             swal("Data akun tidak jadi dihapus");
-          }
-        });
+        }
+    });
     })
 </script>
 </body>

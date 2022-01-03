@@ -23,10 +23,10 @@ class CreateNasabahBadansTable extends Migration
             $table->string('npwp_pemilik');
             $table->string('sumber_dana');
             $table->string('omzet');
-            $table->string('pengurus1');
-            $table->string('pengurus2');
-            $table->string('pengurus3');
-            $table->string('pengurus4');
+            $table->string('pengurus1')->nullable();
+            $table->string('pengurus2')->nullable();
+            $table->string('pengurus3')->nullable();
+            $table->string('pengurus4')->nullable();
             $table->timestamps();
         });
     }

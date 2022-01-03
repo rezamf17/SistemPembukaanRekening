@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/KelolaAkunHapus/{id}', [KelolaAkunController::class, 'delete'])->name('delete');
     Route::get('/report', [ReportController::class, 'index']);
+    Route::get('/rekeningDeposito', [DepositoController::class, 'view']);
 });
 Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::resource('/nasabahCabang', NasabahCabangController::class);
