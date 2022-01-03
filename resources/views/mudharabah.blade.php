@@ -2,7 +2,7 @@
 @section('content')
 <div class="card">
 	<div class="card-header text-center text-white bg-info">
-		<img src="{{asset('style/img/bprs.png')}}" class="img-fluid" alt="Responsive image">
+		<img src="{{asset('style/img/bprslogo.png')}}" class="img-fluid" alt="Responsive image">
 		<h3 class="text-center">AKAD MUDHARABAH MUTLAQAH</h3>
 	</div>
 	<div class="card-body">

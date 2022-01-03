@@ -99,43 +99,81 @@ Lihat Data Nasabah
     <div class="card-header">Data Nasabah Perorang</div>
     <div class="card-body">
         <table class="table">
-                <tr>
-                    <th>Sumber Penghasilan</th>
-                    <td>{{$formulir->nasabah_perorang->sumber_penghasilan}}</td>
-                </tr>
-                <tr>
-                    <th>Nama Tempat Kerja</th>
-                    <td>{{$formulir->nasabah_perorang->nama_tempat_kerja}}</td>
-                </tr>
-                <tr>
-                    <th>Jabatan</th>
-                    <td>{{$formulir->nasabah_perorang->jabatan}}</td>
-                </tr>
-                <tr>
-                    <th>Bidang Usaha</th>
-                    <td>{{$formulir->nasabah_perorang->bidang_usaha}}</td>
-                </tr>
-                <tr>
-                    <th>Alamat Perusahaan</th>
-                    <td>{{$formulir->nasabah_perorang->alamat_perusahaan}}</td>
-                </tr>
-                <tr>
-                    <th>Pekerjaan</th>
-                    <td>{{$formulir->nasabah_perorang->pekerjaan}}</td>
-                </tr>
-                <tr>
-                    <th>Pendidikan</th>
-                    <td>{{$formulir->nasabah_perorang->pendidikan}}</td>
-                </tr>
-                <tr>
-                    <th>Agama</th>
-                    <td>{{$formulir->nasabah_perorang->agama}}</td>
-                </tr>
-                <tr>
-                    <th>Penghasilan</th>
-                    <td>{{$formulir->nasabah_perorang->penghasilan}}</td>
-                </tr>
-                
+            @if ($formulir->nasabah_perorang == null)
+            <tr>
+                <th>Sumber Penghasilan</th>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Nama Tempat Kerja</th>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Jabatan</th>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Bidang Usaha</th>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Alamat Perusahaan</th>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Pekerjaan</th>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Pendidikan</th>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Agama</th>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Penghasilan</th>
+                <td>-</td>
+            </tr>
+            @else
+            <tr>
+                <th>Sumber Penghasilan</th>
+                <td>{{$formulir->nasabah_perorang->sumber_penghasilan}}</td>
+            </tr>
+            <tr>
+                <th>Nama Tempat Kerja</th>
+                <td>{{$formulir->nasabah_perorang->nama_tempat_kerja}}</td>
+            </tr>
+            <tr>
+                <th>Jabatan</th>
+                <td>{{$formulir->nasabah_perorang->jabatan}}</td>
+            </tr>
+            <tr>
+                <th>Bidang Usaha</th>
+                <td>{{$formulir->nasabah_perorang->bidang_usaha}}</td>
+            </tr>
+            <tr>
+                <th>Alamat Perusahaan</th>
+                <td>{{$formulir->nasabah_perorang->alamat_perusahaan}}</td>
+            </tr>
+            <tr>
+                <th>Pekerjaan</th>
+                <td>{{$formulir->nasabah_perorang->pekerjaan}}</td>
+            </tr>
+            <tr>
+                <th>Pendidikan</th>
+                <td>{{$formulir->nasabah_perorang->pendidikan}}</td>
+            </tr>
+            <tr>
+                <th>Agama</th>
+                <td>{{$formulir->nasabah_perorang->agama}}</td>
+            </tr>
+            <tr>
+                <th>Penghasilan</th>
+                <td>{{$formulir->nasabah_perorang->penghasilan}}</td>
+            </tr>
+            @endif 
         </table>
     </div>
 </div>
@@ -146,11 +184,107 @@ Lihat Data Nasabah
     </div>
     <div class="card-body">
         <table class="table">
-           <tr>
-               <th></th>
-               <td></td>
-           </tr>
-        </table>
-    </div>
+            @if ($formulir->nasabah_badan == null)
+            <tr>
+             <th>Nama Badan Usaha</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th>Bentuk Usaha</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th>Jenis Usaha</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th>Izin Usaha</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th>Alamat Pemilik</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th>NPWP Pemilik</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th>Sumber Dana</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th>Omzet</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th>Pengurus</th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th></th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th></th>
+             <td>-</td>
+         </tr>
+         <tr>
+             <th></th>
+             <td>-</td>
+         </tr>
+         @else
+
+         <tr>
+             <th>Nama Badan Usaha</th>
+             <td>{{$formulir->nasabah_badan->nama_badan_usaha}}</td>
+         </tr>
+         <tr>
+             <th>Bentuk Usaha</th>
+             <td>{{$formulir->nasabah_badan->bentuk_usaha}}</td>
+         </tr>
+         <tr>
+             <th>Jenis Usaha</th>
+             <td>{{$formulir->nasabah_badan->jenis_usaha}}</td>
+         </tr>
+         <tr>
+             <th>Izin Usaha</th>
+             <td>{{$formulir->nasabah_badan->izin_usaha}}</td>
+         </tr>
+         <tr>
+             <th>Alamat Pemilik</th>
+             <td>{{$formulir->nasabah_badan->alamat_pemilik}}</td>
+         </tr>
+         <tr>
+             <th>NPWP Pemilik</th>
+             <td>{{$formulir->nasabah_badan->npwp_pemilik}}</td>
+         </tr>
+         <tr>
+             <th>Sumber Dana</th>
+             <td>{{$formulir->nasabah_badan->sumber_dana}}</td>
+         </tr>
+         <tr>
+             <th>Omzet</th>
+             <td>{{$formulir->nasabah_badan->omzet}}</td>
+         </tr>
+         <tr>
+             <th>Pengurus</th>
+             <td>1. {{$formulir->nasabah_badan->pengurus1}}</td>
+         </tr>
+         <tr>
+             <th></th>
+             <td>2. {{$formulir->nasabah_badan->pengurus2}}</td>
+         </tr>
+         <tr>
+             <th></th>
+             <td>3. {{$formulir->nasabah_badan->pengurus3}}</td>
+         </tr>
+         <tr>
+             <th></th>
+             <td>4 .{{$formulir->nasabah_badan->pengurus4}}</td>
+         </tr>
+         @endif
+     </table>
+ </div>
 </div>
 @endsection

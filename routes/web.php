@@ -8,6 +8,7 @@ use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NasabahCabangController;
 use App\Http\Controllers\KelolaAkunController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,7 @@ Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
     Route::resource('/KelolaAkun', KelolaAkunController::class);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/KelolaAkunHapus/{id}', [KelolaAkunController::class, 'delete'])->name('delete');
+    Route::get('/report', [ReportController::class, 'index']);
 });
 Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::resource('/nasabahCabang', NasabahCabangController::class);

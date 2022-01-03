@@ -23,6 +23,10 @@ class Formulir extends Model
     {
         return $this->belongsTo(NasabahPerorang::class, 'id_nasabah_perorang');
     }
+    public function nasabah_badan()
+    {
+        return $this->belongsTo(NasabahBadan::class, 'id_nasabah_badan');
+    }
     public function files()
     {
         return $this->belongsTo(File::class, 'id_files');

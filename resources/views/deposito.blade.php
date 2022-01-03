@@ -14,7 +14,7 @@
   <br> <h5> Silahkan Pilih Kategori Nasabah </h5>
 <div class="text-center">
     <a href="{{ url('/') }}" class="btn btn-primary btn-lg text-center">REKENING TABUNGAN</a>
-    <a href="{{ url('/deposito') }}" class="btn btn-secondary btn-lg text-center">REKENING DEPOSITO</a> <br>
+    <a href="#" class="btn btn-secondary btn-lg text-center">REKENING DEPOSITO</a> <br>
     </div>
   </div>
   <form action="{{ url('/deposito') }}" method="post" accept-charset="utf-8">

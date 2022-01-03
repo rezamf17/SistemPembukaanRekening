@@ -75,6 +75,12 @@
                         <span>Data Form Nasabah</span>
                     </a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link collapsed" href="{{ url('/report') }}">
+                        <i class="fas fa-fw fa-file"></i>
+                        <span>Report</span>
+                    </a>
+                    </li>
                 @endif
                 @if(auth()->user()->role == 'admin')
                     <li class="nav-item">

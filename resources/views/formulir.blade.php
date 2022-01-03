@@ -4,7 +4,7 @@
   <form action="{{ url('/') }}" method="post" onsubmit="return confirm('Anda yakin sudah mengisi data dengan benar?')" accept-charset="utf-8" enctype="multipart/form-data">
     @csrf
   <div class="card-header text-center text-white bg-primary">
-    <img src="{{asset('style/img/bprs.png')}}" class="img-fluid" alt="Responsive image">
+    <img src="{{asset('style/img/bprslogo.png')}}" class="img-fluid" alt="Responsive image">
     <h3 class="text-center">APLIKASI PEMBUKAAN REKENING</h3>
   </div>
   <div class="card-body">

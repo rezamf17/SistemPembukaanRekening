@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class KelolaAkunController extends Controller
 {
@@ -41,7 +42,7 @@ class KelolaAkunController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->role = $request->role;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->save();
 
         return redirect('KelolaAkun')->with('success', 'Data Akun Berhasil Ditambahkan!');
@@ -91,7 +92,7 @@ class KelolaAkunController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->role = $request->role;
-            $user->password = $request->password;
+            $user->password = Hash::make($request->password);
             $user->save();
         }
 
