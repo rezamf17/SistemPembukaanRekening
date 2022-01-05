@@ -7,41 +7,19 @@ use App\Models\IdentitasNasabah;
 use App\Models\NasabahPerorang;
 use App\Models\NasabahBadan;
 use App\Models\Formulir;
+use App\Models\Deposito;
 use App\Models\File;
-use App\Models\Cabang;
 use App\Models\JenisSimpanan;
 
-class FormulirController extends Controller
+class DepositoNasabahController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('formulir');
+        return view ('deposito');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        // return $request;
         $nama = $request->nama;
         $jenis_tabungan = $request->jenis_tabungan;
         $cabang = $request->id_cabang;
@@ -52,7 +30,7 @@ class FormulirController extends Controller
         $alamat = $request->alamat;
         $zakat = $request->zakat;
         $identitas = new IdentitasNasabah;
-        $identitas->nama = $nama;
+        $identitas->nama = $request->nama;
         $identitas->jenis_kelamin = $request->jenis_kelamin;
         $identitas->nama_ibu = $request->nama_ibu;
         $identitas->status_kependudukan = $request->status_kependudukan;
@@ -71,11 +49,6 @@ class FormulirController extends Controller
             $identitas->save();
         }
 
-        $jenis_simpanan = new JenisSimpanan;
-        $jenis_simpanan->jenis_simpanan = $request->jenis_simpanan;
-        $jenis_simpanan->jenis_tabungan = $jenis_tabungan;
-        $jenis_simpanan->save();
-
         $perorang = new NasabahPerorang;
         $perorang->sumber_penghasilan = $request->sumber_penghasilan;
         $perorang->nama_tempat_kerja = $request->nama_tempat_kerja;
@@ -91,6 +64,11 @@ class FormulirController extends Controller
         }else{
             $perorang->save();
         }
+
+        $jenis_simpanan = new JenisSimpanan;
+        $jenis_simpanan->jenis_simpanan = $request->jenis_simpanan;
+        $jenis_simpanan->jenis_tabungan = $request->jenis_tabungan;
+        $jenis_simpanan->save();
 
         $badan = new NasabahBadan;
         $badan->bentuk_usaha = $request->bentuk_usaha;
@@ -114,6 +92,25 @@ class FormulirController extends Controller
         $file = new File;
         $file->name = $request->file('file')->store('ktp');
         $file->save();
+        
+        $deposito = new Deposito;
+        $deposito->id_cabang = $request->id_cabang;
+        $deposito->id_jenis_simpanan = $jenis_simpanan->id;
+        $deposito->id_identitas_nasabah = $identitas->id;
+        $deposito->id_nasabah_perorang = $perorang->id;
+        $deposito->id_nasabah_badan = $badan->id;
+        $deposito->id_files = $file->id;
+        $deposito->no_rekening_pemilik = $request->no_rekening_pemilik;
+        $deposito->atas_nama = $request->atas_nama;
+        $deposito->mata_uang = $request->mata_uang;
+        $deposito->jangka_waktu = $request->jangka_waktu;
+        $deposito->pembayaran_bagi_hasil = $request->pembayaran_bagi_hasil;
+        $deposito->no_rek_bagi_hasil = $request->no_rek_bagi_hasil;
+        $deposito->perpanjang_otomatis = $request->perpanjang_otomatis;
+        $deposito->ahli_waris = $request->ahli_waris;
+        $deposito->hubungan_dgn_ahli_waris = $request->hubungan_dgn_ahli_waris;
+        $deposito->save();
+
 
         $formulir = new Formulir;
         $formulir->id_cabang = $request->id_cabang;
@@ -122,63 +119,17 @@ class FormulirController extends Controller
         $formulir->id_nasabah_perorang = $perorang->id;
         $formulir->id_nasabah_badan = $badan->id;
         $formulir->id_files = $file->id;
-        // $formulir->save();
-        return $formulir;
-
-        // if ($request->jenis_simpanan == "Simpanan Wadiah") {
-        //     // return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
-        //     $data_cabang = Cabang::first();
-        //     return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
-        // }
-        // if ($request->jenis_simpanan == "Simpanan Mudharabah") {
-        //      return view('mudharabah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
-        // }
+        $formulir->save();
+        if ($request->jenis_simpanan == "Simpanan Wadiah") {
+            // return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
+            return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
+        }
+        elseif ($request->jenis_simpanan == "Simpanan Mudharabah") {
+             return view('mudharabah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
+        }else{
+            return redirect('deposito');
+        }
         // return $badan;
-        // return $perorang;
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return $formulir;
     }
 }

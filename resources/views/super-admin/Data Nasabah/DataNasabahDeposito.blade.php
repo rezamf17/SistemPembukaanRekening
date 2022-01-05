@@ -13,7 +13,7 @@ Data Rekening Deposito
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Atas Nama</th>
                         <th>No Rekening</th>
                         <th>Mata Uang</th>
                         <th>Jangka Waktu</th>
@@ -22,16 +22,22 @@ Data Rekening Deposito
                 </thead>
                 <tbody>
                     @foreach ($deposito as $element)
-                        <tr>
-                            <td>{{$loop->iteration}}</td>
-                            <td>{{$element->atas_nama}}</td>
-                            <td>{{$element->no_rekening}}</td>
-                            <td>{{$element->mata_uang}}</td>
-                            <td>{{$element->jangka_waktu}}</td>
-                            <th>
-                                <a href="{{ url('nasabah/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
-                            </th>
-                        </tr>
+                    <tr>
+                        <td>{{$loop->iteration}}</td>
+                        <td>
+                            @if ($element->atas_nama == null)
+                            {{$element->identitas_nasabah->nama}}
+                            @else
+                            {{$element->atas_nama}}
+                            @endif
+                        </td>
+                        <td>{{$element->no_rekening_pemilik}}</td>
+                        <td>{{$element->mata_uang}}</td>
+                        <td>{{$element->jangka_waktu}}</td>
+                        <th>
+                            <a href="{{ url('rekeningDeposito/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
+                        </th>
+                    </tr>
                     @endforeach
                 </tbody>
             </table>

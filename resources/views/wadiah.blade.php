@@ -46,8 +46,6 @@
 		<div class="form-group">
 			<label>No. KTP/Password</label>
 			<input type="number" name="" class="form-control" value="{{$no_ktp}}">
-			Masa Berlaku KTP/Password
-			<input type="date" name="" class="form-control" value="{{$masa_berlaku}}">
 		</div>
 		<div class="form-group">
 			<label>Alamat</label>

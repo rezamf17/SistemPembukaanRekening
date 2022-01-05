@@ -84,10 +84,6 @@
       <input type="number" name="no_ktp" class="form-control">
     </div>
     <div class="form-group">
-      <label>Masa Berlaku KTP</label>
-      <input type="date" name="masa_berlaku" class="form-control">
-    </div>
-    <div class="form-group">
       <label>NPWP</label>
       <input type="number" name="npwp" class="form-control">
     </div>
@@ -166,21 +162,16 @@
       <label>Jenis Tabungan</label> <br>
       <div class="form-check">
         <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah1" value="Reguler/Umum">
-        Reguler/Umum 
+        Tabungan Ma'soem IB
       </div>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah2" value="Siswa">
-        Siswa
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah2" value="Tabungan Ma'soem SimPel IB (Simpanan Pelajar)">
+        Tabungan Ma'soem SimPel IB (Simpanan Pelajar)
       </div>
       <div class="form-check">
         <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah3" value="Payroll">
         Payroll 
       </div>
-      {{-- <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah4">
-        lainnya
-        <input type="text" name="" class="tanggal-lahir">
-      </div> --}}
     </div>
   </div> <br>
   <div class="form-check">
@@ -191,13 +182,16 @@
     <div class="form-group">
       <label>Jenis Tabungan</label> <br>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah1" value="Tabungan Mudharabah">
-        Tabungan Mudharabah 
-        {{-- <input type="text" name="" class="tanggal-lahir"> --}}
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah1" value="Tabungan Ma'soem Haji IB">
+        Tabungan Ma'soem Haji IB 
       </div>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah2" value="Deposito Mudharabah">
-        Deposito Mudharabah
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah2" value="Deposito Ma'soem Qurban IB">
+        Tabungan Ma'soem Qurban IB
+      </div>
+      <div class="form-check">
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah2" value="Deposito Ma'soem Masa Depan IB">
+        Tabungan Ma'soem Masa Depan IB
       </div>
     </div>
   </div>

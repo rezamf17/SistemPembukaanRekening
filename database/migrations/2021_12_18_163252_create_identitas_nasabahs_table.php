@@ -22,7 +22,6 @@ class CreateIdentitasNasabahsTable extends Migration
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->string('no_ktp');
-            $table->string('masa_berlaku');
             $table->string('npwp')->nullable();
             $table->string('alamat');
             $table->string('no_hp');

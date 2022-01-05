@@ -17,7 +17,7 @@
     <a href="#" class="btn btn-secondary btn-lg text-center">REKENING DEPOSITO</a> <br>
     </div>
   </div>
-  <form action="{{ url('/deposito') }}" method="post" accept-charset="utf-8">
+  <form action="{{ url('/deposito') }}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
     @csrf
   
         <br><label>Apakah Anda Sudah Memiliki Rekening Bank BPRS ALMASOEM ?</label>
@@ -141,12 +141,6 @@
     <label style="margin-bottom: 10px;">Nomor KTP</label>
       <input type="number" name="no_ktp" class="form-control disable">
     </div>
-    <div class="row">
-    <div class="col-6">
-    <label style="margin-bottom: 10px;">Masa Berlaku KTP</label>
-      <input type="date" name="masa_berlaku" class="form-control disable">
-    </div>
-    
     <div class="form-group">
     <div class="row">
     <div class="col-6">
