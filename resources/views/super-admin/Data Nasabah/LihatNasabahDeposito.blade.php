@@ -193,9 +193,9 @@ Lihat Data Nasabah Deposito
     </div>
     <div class="card-body">
         <table class="table">
-            @if ($deposito->nasabah_badan == null)
+        @if ($deposito->nasabah_badan == null)
             Data Kosong
-            @else
+        @else
          <tr>
              <th>Nama Badan Usaha</th>
              <td>{{$deposito->nasabah_badan->nama_badan_usaha}}</td>
@@ -246,6 +246,10 @@ Lihat Data Nasabah Deposito
          </tr>
          @endif
      </table>
+     <div class="card-footer">
+         <a href="{{ url('laporanDeposito/'.$deposito->id) }}" title="Report PDF" class="btn btn-danger"><i class="fa fa-print"></i>Report PDF</a>
+         <a href="{{ url('nasabah') }}" title="Kembali" class="btn btn-secondary"><i class="fa fa-undo"></i>Kembali</a>
+     </div>
  </div>
 </div>
 @endsection

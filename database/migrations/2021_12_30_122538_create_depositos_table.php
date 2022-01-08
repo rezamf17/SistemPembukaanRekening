@@ -23,6 +23,7 @@ class CreateDepositosTable extends Migration
             $table->foreignId('id_files')->nullable()->constrained('files')->onUpdate('cascade')->onDelete('cascade');
             $table->string('no_rekening_pemilik')->nullable();
             $table->string('atas_nama')->nullable();
+            $table->string('nominal_setoran');
             $table->string('mata_uang');
             $table->string('jangka_waktu');
             $table->string('pembayaran_bagi_hasil');

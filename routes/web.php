@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
     Route::get('/KelolaAkunHapus/{id}', [KelolaAkunController::class, 'delete'])->name('delete');
     Route::get('/report', [ReportController::class, 'index']);
     Route::get('/laporanTabungan/{id}', [ReportController::class, 'tabunganNasabahReport']);
+    Route::get('/laporanDeposito/{id}', [ReportController::class, 'depositoNasabahReport']);
     Route::resource('/rekeningDeposito', DepositoController::class);
 });
 Route::group(['middleware' => ['auth', 'role:admin']], function() {

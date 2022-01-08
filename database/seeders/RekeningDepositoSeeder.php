@@ -17,8 +17,10 @@ class RekeningDepositoSeeder extends Seeder
          DB::table('deposito')->insert([
             [
                 'id_cabang' => 6,
+                'id_jenis_simpanan' => 1,
                 'no_rekening_pemilik' => '345345345',
                 'atas_nama'  => 'dani cirebon',
+                'nominal_setoran' => 'Rp. 1.500.123.,',
                 'mata_uang'  => 'rupiah',
                 'jangka_waktu'  => '12 bulan',
                 'pembayaran_bagi_hasil'  => 'Dibukukan pada tabungan',
@@ -29,8 +31,10 @@ class RekeningDepositoSeeder extends Seeder
             ],
             [
                 'id_cabang' => 6,
+                'id_jenis_simpanan' => 1,
                 'no_rekening_pemilik' => '345345345',
                 'atas_nama'  => 'dani cicalengka',
+                'nominal_setoran' => 'Rp. 1.500.123.,',
                 'mata_uang'  => 'rupiah',
                 'jangka_waktu'  => '12 bulan',
                 'pembayaran_bagi_hasil'  => 'Dibukukan pada tabungan',

@@ -97,7 +97,7 @@
     </div>
     <label>Dalam Hal Ini Bertindak Sebagai</label>
       <div class="form-check">
-      <input class="form-check-input" type="radio" name="bertindak_sebagai" value="Diri Sendiri" id="bertindak1">
+      <input class="form-check-input" type="radio" name="bertindak_sebagai" value="Diri Sendiri" id="bertindak1" required>
       <label class="form-check-label" for="flexRadioDefault1">
         Diri Sendiri
       </label>
