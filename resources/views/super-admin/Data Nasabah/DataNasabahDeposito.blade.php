@@ -36,6 +36,7 @@ Data Rekening Deposito
                         <td>{{$element->jangka_waktu}}</td>
                         <th>
                             <a href="{{ url('rekeningDeposito/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
+                            <a href="#" title="Hapus Data" class="btn btn-danger btn-circle delete-nasabah" data-id="{{$element->id}}"><i class="fa fa-trash"></i></a>
                         </th>
                     </tr>
                     @endforeach

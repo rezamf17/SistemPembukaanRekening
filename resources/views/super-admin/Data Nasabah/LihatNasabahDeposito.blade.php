@@ -1,11 +1,11 @@
 @extends('layouts.temp')
 @section('title')
-Lihat Data Nasabah
+Lihat Data Nasabah Deposito
 @endsection()
 @section('content')
 <div class="card">
     <div class="card-header">
-        Data Deposito Nasabah
+        Data Deposito Nasabah Deposito
     </div>
     <div class="card-body">
         <div class="table-responsive">

@@ -32,10 +32,12 @@ Route::get('/form', function () {
 });
 Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
     Route::resource('/nasabah', DataNasabahController::class);
+    Route::get('/nasabahHapus/{id}', [DataNasabahController::class, 'hapus']);
     Route::resource('/KelolaAkun', KelolaAkunController::class);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/KelolaAkunHapus/{id}', [KelolaAkunController::class, 'delete'])->name('delete');
     Route::get('/report', [ReportController::class, 'index']);
+    Route::get('/laporanTabungan/{id}', [ReportController::class, 'tabunganNasabahReport']);
     Route::resource('/rekeningDeposito', DepositoController::class);
 });
 Route::group(['middleware' => ['auth', 'role:admin']], function() {

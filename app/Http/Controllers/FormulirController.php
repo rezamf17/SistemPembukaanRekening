@@ -48,7 +48,6 @@ class FormulirController extends Controller
         $tempat_lahir = $request->tempat_lahir;
         $tanggal_lahir = $request->tanggal_lahir;
         $no_ktp = $request->no_ktp;
-        $masa_berlaku = $request->masa_berlaku;
         $alamat = $request->alamat;
         $zakat = $request->zakat;
         $identitas = new IdentitasNasabah;
@@ -122,17 +121,14 @@ class FormulirController extends Controller
         $formulir->id_nasabah_perorang = $perorang->id;
         $formulir->id_nasabah_badan = $badan->id;
         $formulir->id_files = $file->id;
-        // $formulir->save();
-        return $formulir;
+        $formulir->save();
 
-        // if ($request->jenis_simpanan == "Simpanan Wadiah") {
-        //     // return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
-        //     $data_cabang = Cabang::first();
-        //     return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
-        // }
-        // if ($request->jenis_simpanan == "Simpanan Mudharabah") {
-        //      return view('mudharabah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
-        // }
+        if ($request->jenis_simpanan == "Simpanan Wadiah") {
+            return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'alamat', 'zakat'));
+        }
+        if ($request->jenis_simpanan == "Simpanan Mudharabah") {
+             return view('mudharabah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'alamat', 'zakat'));
+        }
         // return $badan;
         // return $perorang;
     }

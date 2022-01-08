@@ -59,7 +59,7 @@ class DepositoNasabahController extends Controller
         $perorang->pendidikan = $request->pendidikan;
         $perorang->agama = $request->agama;
         $perorang->penghasilan = $request->penghasilan;
-        if ($request->sumber_penghasilan == null) {
+        if ($request->pendidikan == null) {
             
         }else{
             $perorang->save();
@@ -130,6 +130,6 @@ class DepositoNasabahController extends Controller
             return redirect('deposito');
         }
         // return $badan;
-        return $formulir;
+        // return $formulir;
     }
 }

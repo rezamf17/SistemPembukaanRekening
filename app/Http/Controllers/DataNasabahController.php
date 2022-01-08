@@ -84,4 +84,11 @@ class DataNasabahController extends Controller
     {
         //
     }
+
+    public function hapus($id)
+    {
+        $formulir = Formulir::find($id);
+        $formulir->delete();
+        return redirect('nasabah')->with('success', 'Data Nasabah Terhapus!');
+    }
 }

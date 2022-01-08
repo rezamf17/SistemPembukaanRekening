@@ -354,36 +354,36 @@
 <div class="card-body">
   <label>Bentuk Usaha</label>
 <div class="form-check">
-    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk1" value="PT">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk1" value="PT" required>
     <label class="form-check-label" for="flexRadioDefault2">
       PT
     </label>
   </div>
    <div class="form-check">
-    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk2" value="CV/RM">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk2" value="CV/RM" required>
     <label class="form-check-label" for="flexRadioDefault1">
       CV/RM
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk3" value="Yayasan">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk3" value="Yayasan" required>
     <label class="form-check-label" for="flexRadioDefault2">
       Yayasan
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk4" value="Lembaga Keuangan">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk4" value="Lembaga Keuangan" required>
     <label class="form-check-label" for="flexRadioDefault2">
       Lembaga Keuangan
     </label>
   </div>
   <div class="form-row">
-    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk5">
+    <input class="form-check-input" type="radio" name="bentuk_usaha" id="badan_bentuk5" required>
     <label class="form-check-label" for="flexRadioDefault2">
       Lainnya
     </label>
     <div class="col-6">
-      <input type="text" name="bentuk_usaha" class="form-control" id="badan_bentuk6">
+      <input type="text" name="bentuk_usaha" class="form-control" id="badan_bentuk6" required>
     </div>
   </div>
   <div class="form-group">

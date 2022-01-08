@@ -1,11 +1,94 @@
-@extends('layouts.temp')
-@section('title')
-Lihat Data Nasabah
-@endsection()
-@section('content')
-<div class="card">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Laporan Data Nasabah</title>
+	<link rel="stylesheet" href="">
+	<style>
+		body{
+			font-family: sans-serif;
+		}
+		h3{
+			display: inline-block;
+			text-align: center;
+		}
+		header{
+			background-color: #0909d6;
+			color: white;
+    		margin-bottom: 7px;
+		}
+		th{
+			text-align: left;
+            padding-right: 15px;
+		}
+		td{
+			text-align: left;
+			margin-left: 20px;
+		}
+		img{
+			width: 100px;
+			display: inline-block;
+		}
+		.card-header{
+			background-color: #0909d6;
+			color: white;
+			padding: 5px;
+			font-size: 12px;
+		}
+		.card-body{
+			font-size: 10px;
+			text-align: left;
+			margin-left: 8px;
+			text-align: left;
+		}
+		.judul{
+			text-align: center;
+			display: inline-block;
+		}
+		.gambar{
+			display: inline-block;
+			/*width: 100px;*/
+		}
+        .ttd1{
+          margin-top: 15px;
+          text-align: center;
+          margin-right: 60%;
+          font-size: 12px;
+        }
+        .ttd2{
+          margin-top: -16px;
+          margin-left: 55%;
+          text-align: center;
+          font-size: 12px;
+        }
+        .ttd3{
+          margin-top: 42px;
+          text-align: center;
+          margin-right: 60%;
+          font-size: 12px;
+        }
+        .ttd4{
+          margin-top: -16px;
+          margin-left: 55%;
+          text-align: center;
+          font-size: 12px;
+        }
+	</style>
+</head>
+<body>
+<header>
+	<div class="gambar">
+		<img src="{{public_path("/style/img/bprslogo.png")}}" alt="">
+		{{-- <img src="../style/img/bprslogo1.png" alt="" style=" width: 150px; margin-bottom: -10px;"> --}}	
+	</div>
+	<div class="judul">
+		<h3>APLIKASI PEMBUKAAN REKENING & PENGKINIAN DATA</h3>
+	</div>
+</header><!-- /header -->
+	<div class="card">
     <div class="card-header">
-        Data Nasabah
+        A. IDENTITAS NASABAH
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -13,48 +96,36 @@ Lihat Data Nasabah
                 <tr>
                     <th>Nama</th>
                     <td>{{$formulir->identitas_nasabah->nama}}</td>
-                </tr>
-                <tr>
                     <th>Jenis Kelamin</th>
                     <td>{{$formulir->identitas_nasabah->jenis_kelamin}}</td>
                 </tr>
                 <tr>
-                    <th>Nama Ibu</th>
+                    <th>Nama Ibu Kandung</th>
                     <td>{{$formulir->identitas_nasabah->nama_ibu}}</td>
-                </tr>
-                <tr>
                     <th>Status Kependudukan</th>
                     <td>{{$formulir->identitas_nasabah->status_kependudukan}}</td>
                 </tr>
                 <tr>
                     <th>Tempat Lahir</th>
                     <td>{{$formulir->identitas_nasabah->tempat_lahir}}</td>
-                </tr>
-                <tr>
                     <th>Tanggal Lahir</th>
                     <td>{{$formulir->identitas_nasabah->tanggal_lahir}}</td>
                 </tr>
                 <tr>
                     <th>No KTP</th>
                     <td>{{$formulir->identitas_nasabah->no_ktp}}</td>
-                </tr>
-                <tr>
                     <th>NPWP</th>
                     <td>{{$formulir->identitas_nasabah->npwp}}</td>
                 </tr>
                 <tr>
                     <th>Alamat</th>
                     <td>{{$formulir->identitas_nasabah->alamat}}</td>
-                </tr>
-                <tr>
                     <th>No HP</th>
                     <td>{{$formulir->identitas_nasabah->no_hp}}</td>
                 </tr>
                 <tr>
                     <th>Bertindak Sebagai</th>
                     <td>{{$formulir->identitas_nasabah->bertindak_sebagai}}</td>
-                </tr>
-                <tr>
                     <th>Tujuan Buka Rekening</th>
                     <td>{{$formulir->identitas_nasabah->tujuan_buka_rekening}}</td>
                 </tr>
@@ -62,17 +133,13 @@ Lihat Data Nasabah
                     <th>Pemotongan Zakat</th>
                     <td>{{$formulir->identitas_nasabah->zakat}}</td>
                 </tr>
-                <tr>
-                    <th>Foto/Scan KTP</th>
-                    <td><img src="{{ asset('storage/'.$formulir->files->name) }}" alt=""></td>
-                </tr>
             </table>
         </div>
     </div>
 </div>
 <br>
 <div class="card">
-    <div class="card-header">Data Produk Yang Dibuka</div>
+    <div class="card-header">B. PRODUK YANG DIBUKA</div>
     <div class="card-body">
         <table class="table">
             <tr>
@@ -88,7 +155,7 @@ Lihat Data Nasabah
 </div>
 <br>
 <div class="card">
-    <div class="card-header">Data Nasabah Perorang</div>
+    <div class="card-header">C. DATA NASABAH PERORANGAN</div>
     <div class="card-body">
         <table class="table">
             @if ($formulir->nasabah_perorang == null)
@@ -172,7 +239,7 @@ Lihat Data Nasabah
 <br>
 <div class="card">
     <div class="card-header">
-        Data Nasabah Badan
+        D. DATA NASABAH BADAN
     </div>
     <div class="card-body">
         <table class="table">
@@ -277,10 +344,39 @@ Lihat Data Nasabah
          </tr>
          @endif
      </table>
-     <div class="card-footer">
-         <a href="{{ url('laporanTabungan/'.$formulir->id) }}" title="Report PDF" class="btn btn-danger"><i class="fa fa-print"></i>Report PDF</a>
-         <a href="{{ url('nasabah') }}" title="Kembali" class="btn btn-secondary"><i class="fa fa-undo"></i>Kembali</a>
-     </div>
  </div>
 </div>
-@endsection
+<div class="card">
+ <div class="card-header">
+    E. PERNYATAAN NASABAH
+  </div>
+  <div class="card-body">
+    Dengan ini nasabah menyatakan : <br>
+
+<p>1. Nasabah bertanggungjawab sepenuhnya atas data dan keterangan yang diberikan dan membebaskan PT. BPRS ALMASOEM dari segala tuntutan dan/atau gugatan dalam bentuk apapun dan dari pihak manapun termasuk dari nasabah, sehubungan dengan pengisian Formulir Pembukaan Rekening</p>
+
+<p>2. PT.BPRS ALMASOEM telah memberikan penjelasan yang cukup mengenai karakteristik produk diantaranya tenggat, resiko dan biaya-biaya yang melekat dan nasabah telah membaca, mengerti dan menyetujui isi ketentuan-ketentuan dan klasifikasi yang terkait dengan produk yang nasabah ajukan seperti tertuang dalam syarat dan ketentuan pembukaan rekening beserta syarat dan ketentuan pemohon.</p>
+
+<p>3. Memberikan kuasa kepada Bank yang tidak dapat dibatalkan secara sepihak oleh nasabah sesuai ketentuan undang-undang hukum pidana untuk: <br>
+a. Mendebit rekening tersebut dalam rangka pembayaran maupun beban yang timbul dari produk maupun kontraknya <br>
+b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan rekening dan/atau oleh sebab-sebab lainnya</p>
+
+<p>4. Tunduk pada syarat dan ketentuan yang berlaku pada BANK sebagaimana yang tertuang berserta segala perubahannya yang merupakan bagian dan menjadi satu kesatuan yang tidak terjelaskan dari Formulir Aplikasi ini.</p>
+  </div>
+</div>
+ <div class="ttd1">
+    <b>Nasabah</b>
+    </div>
+
+    <div class="ttd2">
+      <b>BPRS ALMASOEM</b> 
+    </div>
+     <div class="ttd3">
+    <b>{{$formulir->identitas_nasabah->nama}}</b>
+    </div>
+
+    <div class="ttd4">
+      <b>.............</b> 
+    </div>
+</body>
+</html>
