@@ -183,23 +183,7 @@
 </div>
 <br>
 <div class="card">
-    <div class="card-header">B. PRODUK YANG DIBUKA</div>
-    <div class="card-body">
-        <table class="table">
-            <tr>
-                <th>Jenis Simpanan</th>
-                <td>{{$deposito->jenis_simpanan->jenis_simpanan}}</td>
-            </tr>
-            <tr>
-                <th>Jenis Tabungan</th>
-                <td>{{$deposito->jenis_simpanan->jenis_tabungan}}</td>
-            </tr>
-        </table>
-    </div>
-</div>
-<br>
-<div class="card">
-    <div class="card-header">C. DATA NASABAH PERORANGAN</div>
+    <div class="card-header">B. DATA NASABAH PERORANGAN</div>
     <div class="card-body">
         <table class="table">
             @if ($deposito->nasabah_perorang == null)
@@ -283,7 +267,7 @@
 <br>
 <div class="card">
     <div class="card-header">
-        D. DATA NASABAH BADAN
+        C. DATA NASABAH BADAN
     </div>
     <div class="card-body">
         <table class="table">
@@ -392,7 +376,7 @@
 </div>
 <div class="card">
     <div class="card-header">
-        E. KHUSUS DEPOSITO
+        D. KHUSUS DEPOSITO
     </div>
     <div class="card-body">
         <table>
@@ -442,7 +426,7 @@
 </div>
 <div class="card">
  <div class="card-header">
-    F. PERNYATAAN NASABAH
+    E. PERNYATAAN NASABAH
   </div>
   <div class="card-body">
     Dengan ini nasabah menyatakan : <br>

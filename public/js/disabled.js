@@ -26,7 +26,7 @@
 		document.getElementById("nasabah_penghasilan3").disabled = false;
 		document.getElementById("nasabah_penghasilan4").disabled = false;
 		document.getElementById("nasabah_penghasilan5").disabled = false;
-		document.getElementById("nasabah_penghasilan6").disabled = false;
+		// document.getElementById("nasabah_penghasilan6").disabled = false;
 		document.getElementById("nasabah_tempat_kerja").disabled = false;
 		document.getElementById("nasabah_jabatan").disabled = false;
 		document.getElementById("nasabah_usaha").disabled = false;

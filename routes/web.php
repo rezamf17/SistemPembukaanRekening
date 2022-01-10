@@ -27,6 +27,9 @@ use App\Http\Controllers\ReportController;
 Route::get('/mudharabah', function () {
     return view('mudharabah');
 });
+Route::get('/done', function () {
+    return view('done');
+});
 Route::get('/form', function () {
     return view('form');
 });

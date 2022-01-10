@@ -76,7 +76,7 @@
 		 <p>Akad ini berlaku sejak tanggal dibukanya rekening Tabungan dan/atau Deposito Mudharabah sampai dengan tanggal berakhirnya Akad atau yang disebabkan oleh penutupan rekening tersebut atas sebab apapun dan/atau sebab lain yang diatur dalam ketentuan produk yang telah disepakati BANK dan NASABAH, termasuk diantaranya adalah sebab yang diatur dalam hukum dan sebab kabar (force majeure). Akad ini merupakan satu kesatuan dan bagian yang tidak terpisah dengan Costumer Information File (CIF)</p>
 	</div>
 	<div class="card-footer">
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<a href="{{ url('done') }}" class="btn btn-success">Submit</a>
 	</div>
 </div>
 @include('sweetalert::alert')

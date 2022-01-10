@@ -2,7 +2,7 @@
 @section('content')
 <div class="card">
   <div class="card-header text-center text-white bg-primary">
-    <img src="{{asset('style/img/bprs.png')}}" class="img-fluid" alt="Responsive image">
+    <img src="{{asset('style/img/bprslogo.png')}}" class="img-fluid" alt="Responsive image">
     <h3 class="text-center">APLIKASI PEMBUKAAN REKENING DEPOSITO</h3>
   </div>
 
@@ -50,10 +50,12 @@
       <option value="6">Majalaya</option>
       <option value="7">Rancaekek</option>
     </select>
-  <label>Pilih Jenis Rekening</label> <br>
-    <button onclick="nasabah()" type="button" class="btn btn-primary disable">Rekening Nasabah Perorangan</button>
-    <button onclick="badan()" type="button" class="btn btn-danger disable">Rekening Nasabah Badan</button>
-    <p id="status"></p>
+    <div class="text-center">
+      <label>Pilih Jenis Rekening</label> <br>
+        <button onclick="nasabah()" type="button" class="btn btn-primary disable">Rekening Nasabah Perorangan</button>
+        <button onclick="badan()" type="button" class="btn btn-danger disable">Rekening Nasabah Badan</button>
+        <p id="status"></p>
+    </div>
 </div>
 
   <br><div class="card-header text-white bg-primary">
@@ -128,9 +130,12 @@
     <div class="col-6">
     <label  style="margin-bottom: 10px;">Tempat Lahir</label>
       <input type="text" name="tempat_lahir" class="form-control disable">
-    <div>
+      </div>
+    <div class="col-6">
      <label  style="margin-bottom: 10px;">Tanggal Lahir </label> <br>
-      <input type="date" name="tanggal_lahir" class="form-control disable">
+      <input type="date" name="tanggal_lahir" class="form-control disable"> 
+        
+      </div>
     </div>
     </div>
 
@@ -213,57 +218,6 @@
         Lainnya
       </label>
         <input class="form-control disable" type="input" name="tujuan_buka_rekening" placeholder="Lainnya..." id="buka_rekening_lainnya">   
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card-header text-white bg-primary">
-  <h5>B. PRODUK YANG DIBUKA</h5>
-</div>
-<div class="card-body">
-  <label>Jenis Simpanan</label>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Wadiah" id="simpanan_wadiah">
-    <label class="form-check-label" for="flexRadioDefault1">
-      Simpanan Wadiah
-    </label>
-    <div class="form-group">
-      <label>Jenis Tabungan</label> <br>
-      <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah1" value="Reguler/Umum">
-        Reguler/Umum 
-      </div>
-      <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah2" value="Siswa">
-        Siswa
-      </div>
-      <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah3" value="Payroll">
-        Payroll 
-      </div>
-      {{-- <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah4">
-        lainnya
-        <input type="text" name="" class="tanggal-lahir">
-      </div> --}}
-    </div>
-  </div> <br>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="jenis_simpanan" value="Simpanan Mudharabah" id="simpanan_mudharabah">
-    <label class="form-check-label" for="flexRadioDefault2">
-      Simpanan Mudharabah
-    </label>
-    <div class="form-group">
-      <label>Jenis Tabungan</label> <br>
-      <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah1" value="Tabungan Mudharabah">
-        Tabungan Mudharabah 
-        {{-- <input type="text" name="" class="tanggal-lahir"> --}}
-      </div>
-      <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="mudharabah2" value="Deposito Mudharabah">
-        Deposito Mudharabah
       </div>
     </div>
   </div>

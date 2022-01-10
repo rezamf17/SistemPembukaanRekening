@@ -10,6 +10,7 @@ use App\Models\Formulir;
 use App\Models\File;
 use App\Models\Cabang;
 use App\Models\JenisSimpanan;
+use Illuminate\Support\Facades\Validator;
 
 class FormulirController extends Controller
 {
@@ -41,6 +42,42 @@ class FormulirController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'id_cabang' => 'required',
+            'nama' => 'required',
+            'jenis_kelamin' => 'required',
+            'nama_ibu' => 'required',
+            'status_kependudukan' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'no_ktp' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+            'bertindak_sebagai' => 'required',
+            'tujuan_buka_rekening' => 'required',
+            'zakat' => 'required',
+        ];
+
+        $messages = [
+            'nama.required' => 'Nama tidak boleh kosong',
+            'jenis_kelamin.required' => 'Jenis Kelamin tidak boleh kosong',
+            'nama_ibu.required' => 'Nama Ibu Kandung tidak boleh kosong',
+            'status_kependudukan.required' => 'Status Kependudukan tidak boleh kosong',
+            'tempat_lahir.required' => 'Tempat Lahir tidak boleh kosong',
+            'tanggal_lahir.required' => 'Tanggal Lahir tidak boleh kosong',
+            'no_ktp.required' => 'Nomor KTP tidak boleh kosong',
+            'alamat.required' => 'Alamat tidak boleh kosong',
+            'no_hp.required' => 'Nomor HP tidak boleh kosong',
+            'bertindak_sebagai.required' => 'Bertindak Sebagai tidak boleh kosong',
+            'tujuan_buka_rekening.required' => 'Tujuan Buka Rekening tidak boleh kosong',
+            'zakat.required' => 'Zakat tidak boleh kosong',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+         return redirect('/')->with('warning', $validator->errors()->first());
+        }
+
         // return $request;
         $nama = $request->nama;
         $jenis_tabungan = $request->jenis_tabungan;

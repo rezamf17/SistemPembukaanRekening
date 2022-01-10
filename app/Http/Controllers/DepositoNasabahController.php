@@ -66,8 +66,8 @@ class DepositoNasabahController extends Controller
         }
 
         $jenis_simpanan = new JenisSimpanan;
-        $jenis_simpanan->jenis_simpanan = $request->jenis_simpanan;
-        $jenis_simpanan->jenis_tabungan = $request->jenis_tabungan;
+        $jenis_simpanan->jenis_simpanan = 'Simpanan Mudharabah';
+        $jenis_simpanan->jenis_tabungan = 'Tabungan Mudharabah';
         $jenis_simpanan->save();
 
         $badan = new NasabahBadan;
@@ -102,6 +102,7 @@ class DepositoNasabahController extends Controller
         $deposito->id_files = $file->id;
         $deposito->no_rekening_pemilik = $request->no_rekening_pemilik;
         $deposito->atas_nama = $request->atas_nama;
+        $deposito->nominal_setoran = $request->nominal_setoran;
         $deposito->mata_uang = $request->mata_uang;
         $deposito->jangka_waktu = $request->jangka_waktu;
         $deposito->pembayaran_bagi_hasil = $request->pembayaran_bagi_hasil;
