@@ -20,6 +20,36 @@ class DepositoNasabahController extends Controller
 
      public function store(Request $request)
     {
+
+        $rules = [
+            'id_cabang' => 'required',
+            'nominal_setoran' => 'required',
+            'mata_uang' => 'required',
+            'jangka_waktu' => 'required',
+            'pembayaran_bagi_hasil' => 'required',
+            'no_rek_bagi_hasil' => 'required',
+            'perpanjang_otomatis' => 'required',
+            'ahli_waris' => 'required',
+            'hubungan_dgn_ahli_waris' => 'required',
+        ];
+
+        $messages = [
+            'id_cabang.required' => 'Kantor Cabang tidak boleh kosong!',
+            'nominal_setoran.required' => 'Nominal Setoran tidak boleh kosong!',
+            'mata_uang.required' => 'Mata Uang tidak boleh kosong!',
+            'jangka_waktu.required' => 'Jangka Waktu Kandung tidak boleh kosong!',
+            'pembayaran_bagi_hasil.required' => 'Pembayaran Bagi Hasil tidak boleh kosong!',
+            'no_rek_bagi_hasil.required' => 'Nomor Rekening Bagi Hasil tidak boleh kosong!',
+            'perpanjang_otomatis.required' => 'Perpanjang Otomatis tidak boleh kosong!',
+            'ahli_waris.required' => 'Ahli Waris tidak boleh kosong!',
+            'hubungan_dgn_ahli_waris.required' => 'Hubungan Dengan Ahli Waris tidak boleh kosong!'
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+         return redirect('/deposito')->with('warning', $validator->errors()->first());
+        }
+
         $nama = $request->nama;
         $jenis_tabungan = $request->jenis_tabungan;
         $cabang = $request->id_cabang;
@@ -121,15 +151,16 @@ class DepositoNasabahController extends Controller
         $formulir->id_nasabah_badan = $badan->id;
         $formulir->id_files = $file->id;
         $formulir->save();
-        if ($request->jenis_simpanan == "Simpanan Wadiah") {
-            // return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
-            return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
-        }
-        elseif ($request->jenis_simpanan == "Simpanan Mudharabah") {
-             return view('mudharabah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
-        }else{
-            return redirect('deposito');
-        }
+        // if ($request->jenis_simpanan == "Simpanan Wadiah") {
+        //     // return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
+        //     return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
+        // }
+        // elseif ($request->jenis_simpanan == "Simpanan Mudharabah") {
+        //      return view('mudharabah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
+        // }else{
+        //     return redirect('deposito');
+        // }
+        return redirect('done')->with('success', 'Pengisian Formulir Berhasil!');
         // return $badan;
         // return $formulir;
     }
