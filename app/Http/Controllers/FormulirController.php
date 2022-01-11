@@ -56,6 +56,7 @@ class FormulirController extends Controller
             'bertindak_sebagai' => 'required',
             'tujuan_buka_rekening' => 'required',
             'zakat' => 'required',
+            'file' => 'required|image'
         ];
 
         $messages = [
@@ -71,6 +72,8 @@ class FormulirController extends Controller
             'bertindak_sebagai.required' => 'Bertindak Sebagai tidak boleh kosong',
             'tujuan_buka_rekening.required' => 'Tujuan Buka Rekening tidak boleh kosong',
             'zakat.required' => 'Zakat tidak boleh kosong',
+            'file.required' => 'Foto/Scan KTP harus diupload',
+            'file.image' => 'Foto/Scan KTP harus berformat gambar'
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
 

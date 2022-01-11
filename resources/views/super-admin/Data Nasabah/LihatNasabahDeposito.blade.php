@@ -231,8 +231,9 @@ Lihat Data Nasabah Deposito
          @endif
      </table>
      <div class="card-footer">
-         <a href="{{ url('laporanDeposito/'.$deposito->id) }}" title="Report PDF" class="btn btn-danger"><i class="fa fa-print"></i>Report PDF</a>
-         <a href="{{ url('nasabah') }}" title="Kembali" class="btn btn-secondary"><i class="fa fa-undo"></i>Kembali</a>
+         <a href="{{ url('laporanDeposito/'.$deposito->id) }}" title="Report PDF" class="btn btn-danger"><i class="fa fa-print"></i>Buat Laporan PDF</a>
+         
+         <a href="{{ url('rekeningDeposito') }}" title="Kembali" class="btn btn-secondary"><i class="fa fa-undo"></i>Kembali</a>
      </div>
  </div>
 </div>

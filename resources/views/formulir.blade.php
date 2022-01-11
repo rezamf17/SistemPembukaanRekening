@@ -209,7 +209,7 @@
     <div class="form-group">
       <label>Jenis Tabungan</label> <br>
       <div class="form-check">
-        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah1" value="Reguler/Umum" required>
+        <input type="radio" name="jenis_tabungan" class="form-check-input" id="wadiah1" value="Tabungan Ma'soem IB" required>
         Tabungan Ma'soem IB
       </div>
       <div class="form-check">

@@ -42,6 +42,8 @@ Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
     Route::get('/report', [ReportController::class, 'index']);
     Route::get('/laporanTabungan/{id}', [ReportController::class, 'tabunganNasabahReport']);
     Route::get('/laporanDeposito/{id}', [ReportController::class, 'depositoNasabahReport']);
+    Route::get('/laporanWadiah/{id}', [ReportController::class, 'wadiahNasabahReport']);
+    Route::get('/laporanMudharabah/{id}', [ReportController::class, 'mudharabahNasabahReport']);
     Route::resource('/rekeningDeposito', DepositoController::class);
 });
 Route::group(['middleware' => ['auth', 'role:admin']], function() {

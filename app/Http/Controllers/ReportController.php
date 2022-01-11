@@ -33,4 +33,22 @@ class ReportController extends Controller
         return $pdf->download('ReportDeposito.pdf');
         // return $pdf->stream();
     }
+
+    public function wadiahNasabahReport($id)
+    {
+        $formulir = Formulir::where('id', $id)->first();
+        // return view ('super-admin.Report.LaporanWadiah', compact('formulir'));
+        $pdf = PDF::loadview('super-admin.Report.LaporanWadiah', compact('formulir'))->setPaper('a4');
+        return $pdf->download('ReportWadiah-'.$formulir->identitas_nasabah->nama.'.pdf');
+        // return $pdf->stream();
+    }
+
+    public function mudharabahNasabahReport($id)
+    {
+         $formulir = Formulir::where('id', $id)->first();
+        // return view ('super-admin.Report.LaporanMudharabah', compact('formulir'));
+        $pdf = PDF::loadview('super-admin.Report.LaporanMudharabah', compact('formulir'))->setPaper('A4');
+        return $pdf->download('ReportMudharabah-'.$formulir->identitas_nasabah->nama.'.pdf');
+        // return $pdf->stream();
+    }
 }

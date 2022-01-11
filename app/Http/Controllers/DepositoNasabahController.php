@@ -10,6 +10,7 @@ use App\Models\Formulir;
 use App\Models\Deposito;
 use App\Models\File;
 use App\Models\JenisSimpanan;
+use Illuminate\Support\Facades\Validator;
 
 class DepositoNasabahController extends Controller
 {
@@ -31,6 +32,7 @@ class DepositoNasabahController extends Controller
             'perpanjang_otomatis' => 'required',
             'ahli_waris' => 'required',
             'hubungan_dgn_ahli_waris' => 'required',
+            'file' => 'required|image'
         ];
 
         $messages = [
@@ -42,7 +44,9 @@ class DepositoNasabahController extends Controller
             'no_rek_bagi_hasil.required' => 'Nomor Rekening Bagi Hasil tidak boleh kosong!',
             'perpanjang_otomatis.required' => 'Perpanjang Otomatis tidak boleh kosong!',
             'ahli_waris.required' => 'Ahli Waris tidak boleh kosong!',
-            'hubungan_dgn_ahli_waris.required' => 'Hubungan Dengan Ahli Waris tidak boleh kosong!'
+            'hubungan_dgn_ahli_waris.required' => 'Hubungan Dengan Ahli Waris tidak boleh kosong!',
+            'file.required' => 'Foto/Scan KTP harus diupload',
+            'file.image' => 'Foto/Scan KTP harus berformat gambar'
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
 
@@ -150,7 +154,12 @@ class DepositoNasabahController extends Controller
         $formulir->id_nasabah_perorang = $perorang->id;
         $formulir->id_nasabah_badan = $badan->id;
         $formulir->id_files = $file->id;
+        if ($identitas->id == null) {
+            
+        }else{
         $formulir->save();
+            
+        }
         // if ($request->jenis_simpanan == "Simpanan Wadiah") {
         //     // return redirect('/wadiah')->with('success', 'Pengisian Formulir Berhasil!');
         //     return view('wadiah', compact('nama', 'jenis_tabungan', 'cabang', 'tempat_lahir', 'tanggal_lahir', 'no_ktp', 'masa_berlaku', 'alamat', 'zakat'));
