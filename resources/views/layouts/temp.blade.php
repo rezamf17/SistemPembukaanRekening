@@ -46,19 +46,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-                </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider">
-
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    Interface
-                </div>
+            
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 
@@ -92,9 +80,28 @@
         @endif
         @if(auth()->user()->role == 'admin')
         <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Interface
+                </div>
+        <li class="nav-item">
             <a class="nav-link collapsed" href="{{ url('/nasabahCabang/'.Auth::user()->id_cabang) }}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>Data Form Nasabah</span>
+                <span>Data Rekening Tabungan</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ url('/depositoCabang/'.Auth::user()->id_cabang) }}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Data Rekening Deposito</span>
             </a>
         </li>
         @endif

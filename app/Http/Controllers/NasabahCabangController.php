@@ -49,7 +49,7 @@ class NasabahCabangController extends Controller
     {
         $user = User::where('id_cabang', $id)->first();
         $formulir = Formulir::where('id_cabang', $id)->get();
-        return view ('admin.NasabahCabang', compact('formulir', 'user'));    
+        return view ('admin.Data Nasabah.NasabahCabang', compact('formulir', 'user'));    
     }
 
     /**

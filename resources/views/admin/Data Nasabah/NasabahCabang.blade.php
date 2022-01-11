@@ -16,7 +16,7 @@ Data Form Nasabah Cabang {{$user->cabang->nama_cabang}}
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
                         <th>Nama Ibu</th>
-                        <th>Status Kependudukan</th>
+                        <th>Jenis Simpanan</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -27,7 +27,7 @@ Data Form Nasabah Cabang {{$user->cabang->nama_cabang}}
                             <td>{{$element->identitas_nasabah->nama}}</td>
                             <td>{{$element->identitas_nasabah->jenis_kelamin}}</td>
                             <td>{{$element->identitas_nasabah->nama_ibu}}</td>
-                            <td>{{$element->identitas_nasabah->status_kependudukan}}</td>
+                            <td>{{$element->jenis_simpanan->jenis_simpanan}}</td>
                             <th>
                                 <a href="{{ url('nasabah/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
                             </th>
