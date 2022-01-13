@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Formulir;
+use App\Models\Deposito;
 
 class HomeController extends Controller
 {
@@ -23,7 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = User::all()->count();
+        $formulir = Formulir::all()->count();
+        $deposito = Deposito::all()->count();
+        return view('home', compact('user', 'formulir', 'deposito'));
     }
 
     public function admin()

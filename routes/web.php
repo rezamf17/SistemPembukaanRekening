@@ -39,11 +39,12 @@ Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
     Route::resource('/KelolaAkun', KelolaAkunController::class);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/KelolaAkunHapus/{id}', [KelolaAkunController::class, 'delete'])->name('delete');
-    
+    Route::resource('/nasabah', DataNasabahController::class);
+    Route::resource('/rekeningDeposito', DepositoController::class);
 });
 Route::group(['middleware' => ['auth', 'role:admin, super_admin']], function() {
     Route::resource('/nasabahCabang', NasabahCabangController::class);
-    Route::resource('/nasabah', DataNasabahController::class);
+    
     Route::get('/depositoCabang/{id}', [DepositoCabangController::class, 'view']);
     Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
     Route::get('/report', [ReportController::class, 'index']);
@@ -51,7 +52,6 @@ Route::group(['middleware' => ['auth', 'role:admin, super_admin']], function() {
     Route::get('/laporanDeposito/{id}', [ReportController::class, 'depositoNasabahReport']);
     Route::get('/laporanWadiah/{id}', [ReportController::class, 'wadiahNasabahReport']);
     Route::get('/laporanMudharabah/{id}', [ReportController::class, 'mudharabahNasabahReport']);
-    Route::resource('/rekeningDeposito', DepositoController::class);
 });
 Route::resource('/', FormulirController::class);
 Route::resource('/wadiah', WadiahController::class);

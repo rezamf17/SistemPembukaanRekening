@@ -52,6 +52,19 @@
                 
                 @if(auth()->user()->role == 'super_admin')
                 <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Interface
+                </div>
+                <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ url('/KelolaAkun') }}">
                         <i class="fas fa-fw fa-users"></i>
                         <span>Kelola Data Akun</span>
@@ -71,12 +84,6 @@
                     </div>
                 </div>
             </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ url('/report') }}">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Report</span>
-            </a>
-        </li>
         @endif
         @if(auth()->user()->role == 'admin')
         <li class="nav-item">
