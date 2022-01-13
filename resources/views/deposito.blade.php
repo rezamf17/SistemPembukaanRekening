@@ -1,6 +1,6 @@
 @extends('layouts.FormTemplate')
 @section('content')
-<div class="card">
+<div class="card" style="background-color: #e7e7e7;">
   <div class="card-header text-center text-white bg-primary">
     <img src="{{asset('style/img/bprslogo.png')}}" class="img-fluid" alt="Responsive image">
     <h3 class="text-center">APLIKASI PEMBUKAAN REKENING DEPOSITO</h3>

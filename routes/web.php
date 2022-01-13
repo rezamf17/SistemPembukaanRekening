@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth', 'role:admin, super_admin']], function() {
     Route::resource('/nasabahCabang', NasabahCabangController::class);
     
     Route::get('/depositoCabang/{id}', [DepositoCabangController::class, 'view']);
-    Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
+    Route::get('/admin/{id}', [HomeController::class, 'admin'])->name('admin');
     Route::get('/report', [ReportController::class, 'index']);
     Route::get('/laporanTabungan/{id}', [ReportController::class, 'tabunganNasabahReport']);
     Route::get('/laporanDeposito/{id}', [ReportController::class, 'depositoNasabahReport']);

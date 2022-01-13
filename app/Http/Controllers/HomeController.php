@@ -32,8 +32,10 @@ class HomeController extends Controller
         return view('home', compact('user', 'formulir', 'deposito'));
     }
 
-    public function admin()
+    public function admin($id)
     {
-        return view ('admin.admin');
+        $formulir = Formulir::where('id_cabang', $id)->count();
+        $deposito = Deposito::where('id_cabang', $id)->count();
+        return view ('admin.admin', compact('formulir', 'deposito'));
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.FormTemplate')
 @section('content')
-<div class="card">
+<div class="card" style="background-color: #e7e7e7;">
   <form action="{{ url('/') }}" method="post" onsubmit="return confirm('Anda yakin sudah mengisi data dengan benar?')" accept-charset="utf-8" enctype="multipart/form-data">
     @csrf
   <div class="card-header text-center text-white bg-primary">

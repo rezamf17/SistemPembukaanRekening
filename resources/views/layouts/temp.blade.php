@@ -87,7 +87,7 @@
         @endif
         @if(auth()->user()->role == 'admin')
         <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin') }}">
+                <a class="nav-link" href="{{ url('admin/'.Auth::user()->id_cabang) }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
                 </li>
