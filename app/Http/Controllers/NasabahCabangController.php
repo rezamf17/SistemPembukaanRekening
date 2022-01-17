@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Formulir;
 use App\Models\User;
+use App\Models\Deposito;
 
 class NasabahCabangController extends Controller
 {
@@ -50,6 +51,18 @@ class NasabahCabangController extends Controller
         $user = User::where('id_cabang', $id)->first();
         $formulir = Formulir::where('id_cabang', $id)->get();
         return view ('admin.Data Nasabah.NasabahCabang', compact('formulir', 'user'));    
+    }
+
+    public function view($id)
+    {
+        $formulir = Formulir::where('id', $id)->first();
+        return view('admin.Data Nasabah.LihatDataNasabah', compact('formulir'));
+    }
+
+    public function viewDeposito($id)
+    {
+        $deposito = Deposito::where('id', $id)->first();
+        return view('admin.Data Nasabah.LihatDataDeposito', compact('deposito'));
     }
 
     /**

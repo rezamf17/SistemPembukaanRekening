@@ -29,7 +29,7 @@ Data Form Nasabah Cabang {{$user->cabang->nama_cabang}}
                             <td>{{$element->identitas_nasabah->nama_ibu}}</td>
                             <td>{{$element->jenis_simpanan->jenis_simpanan}}</td>
                             <th>
-                                <a href="{{ url('nasabah/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
+                                <a href="{{ url('viewNasabah/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
                             </th>
                         </tr>
                     @endforeach

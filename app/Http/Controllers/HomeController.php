@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Formulir;
 use App\Models\Deposito;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -32,8 +33,9 @@ class HomeController extends Controller
         return view('home', compact('user', 'formulir', 'deposito'));
     }
 
-    public function admin($id)
+    public function admin()
     {
+        $id = Auth::user()->id_cabang;
         $formulir = Formulir::where('id_cabang', $id)->count();
         $deposito = Deposito::where('id_cabang', $id)->count();
         return view ('admin.admin', compact('formulir', 'deposito'));

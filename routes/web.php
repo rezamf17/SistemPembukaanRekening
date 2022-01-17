@@ -41,17 +41,23 @@ Route::group(['middleware' => ['auth', 'role:super_admin']], function() {
     Route::get('/KelolaAkunHapus/{id}', [KelolaAkunController::class, 'delete'])->name('delete');
     Route::resource('/nasabah', DataNasabahController::class);
     Route::resource('/rekeningDeposito', DepositoController::class);
-});
-Route::group(['middleware' => ['auth', 'role:admin, super_admin']], function() {
-    Route::resource('/nasabahCabang', NasabahCabangController::class);
-    
-    Route::get('/depositoCabang/{id}', [DepositoCabangController::class, 'view']);
-    Route::get('/admin/{id}', [HomeController::class, 'admin'])->name('admin');
     Route::get('/report', [ReportController::class, 'index']);
+    Route::get('/laporanTabunganAdmin/{id}', [ReportController::class, 'tabunganNasabahReportAdmin']);
+    Route::get('/laporanDepositoAdmin/{id}', [ReportController::class, 'depositoNasabahReportAdmin']);
+    Route::get('/laporanWadiahAdmin/{id}', [ReportController::class, 'wadiahNasabahReportAdmin']);
+    Route::get('/laporanMudharabahAdmin/{id}', [ReportController::class, 'mudharabahNasabahReportAdmin']);
+});
+Route::group(['middleware' => ['auth', 'role:admin']], function() {
+    Route::resource('/nasabahCabang', NasabahCabangController::class);
+    Route::get('viewNasabah/{id}', [NasabahCabangController::class, 'view']);
+    Route::get('viewDeposito/{id}', [NasabahCabangController::class, 'viewDeposito']);
+    Route::get('/depositoCabang/{id}', [DepositoCabangController::class, 'view']);
+    Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
     Route::get('/laporanTabungan/{id}', [ReportController::class, 'tabunganNasabahReport']);
     Route::get('/laporanDeposito/{id}', [ReportController::class, 'depositoNasabahReport']);
     Route::get('/laporanWadiah/{id}', [ReportController::class, 'wadiahNasabahReport']);
     Route::get('/laporanMudharabah/{id}', [ReportController::class, 'mudharabahNasabahReport']);
+    
 });
 Route::resource('/', FormulirController::class);
 Route::resource('/wadiah', WadiahController::class);

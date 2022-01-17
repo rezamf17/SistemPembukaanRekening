@@ -278,11 +278,11 @@ Lihat Data Nasabah
          @endif
      </table>
      <div class="card-footer">
-         <a href="{{ url('laporanTabunganAdmin/'.$formulir->id) }}" title="Report PDF" class="btn btn-danger"><i class="fa fa-print"></i>Buat Laporan PDF</a>
+         <a href="{{ url('laporanTabungan/'.$formulir->id) }}" title="Report PDF" class="btn btn-danger"><i class="fa fa-print"></i>Buat Laporan PDF</a>
          @if ($formulir->jenis_simpanan->jenis_simpanan == "Simpanan Wadiah")
-             <a href="{{ url('laporanWadiahAdmin/'.$formulir->id) }}" title="Report PDF" class="btn btn-warning"><i class="fa fa-print"></i>Buat Laporan Wadiah PDF</a>
+             <a href="{{ url('laporanWadiah/'.$formulir->id) }}" title="Report PDF" class="btn btn-warning"><i class="fa fa-print"></i>Buat Laporan Wadiah PDF</a>
          @elseif($formulir->jenis_simpanan->jenis_simpanan == "Simpanan Mudharabah")
-             <a href="{{ url('laporanMudharabahAdmin/'.$formulir->id) }}" title="Report PDF" class="btn btn-info"><i class="fa fa-print"></i>Buat Laporan Mudharabah PDF</a>
+             <a href="{{ url('laporanMudharabah/'.$formulir->id) }}" title="Report PDF" class="btn btn-info"><i class="fa fa-print"></i>Buat Laporan Mudharabah PDF</a>
          @endif
          <a href="{{ url('nasabah') }}" title="Kembali" class="btn btn-secondary"><i class="fa fa-undo"></i>Kembali</a>
      </div>
