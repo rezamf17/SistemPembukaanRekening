@@ -30,6 +30,7 @@ Data Rekening Tabungan
                             <td>{{$element->jenis_simpanan->jenis_simpanan}}</td>
                             <th>
                                 <a href="{{ url('nasabah/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
+                                <a href="{{ url('nasabah/'.$element->id.'/edit') }}" class="btn btn-success btn-circle" title="Edit Data"><i class="fa fa-edit"></i></a>
                                 <a href="#" title="Hapus Data" class="btn btn-danger btn-circle delete-nasabah" data-id="{{$element->id}}" data-nama="{{$element->identitas_nasabah->nama}}"><i class="fa fa-trash"></i></a>
                             </th>
                         </tr>
@@ -39,4 +40,5 @@ Data Rekening Tabungan
         </div>
     </div>
 </div>
+@include('sweetalert::alert')
 @endsection
