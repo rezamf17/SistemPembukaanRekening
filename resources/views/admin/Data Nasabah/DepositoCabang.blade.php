@@ -35,6 +35,7 @@ Data Form Nasabah Cabang {{$user->cabang->nama_cabang}}
                             <td>{{$element->mata_uang}}</td>
                             <td>{{$element->jangka_waktu}}</td>
                             <th>
+                                <a href="{{ url('depositoCabang/'.$element->id.'/edit') }}" title="Edit Data" class="btn btn-success btn-circle"><i class="fa fa-edit"></i></a>
                                 <a href="{{ url('viewDeposito/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
                             </th>
                         </tr>
@@ -44,4 +45,5 @@ Data Form Nasabah Cabang {{$user->cabang->nama_cabang}}
         </div>
     </div>
 </div>
+@include('sweetalert::alert')
 @endsection

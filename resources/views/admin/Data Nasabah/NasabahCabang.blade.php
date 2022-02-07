@@ -29,6 +29,7 @@ Data Form Nasabah Cabang {{$user->cabang->nama_cabang}}
                             <td>{{$element->identitas_nasabah->nama_ibu}}</td>
                             <td>{{$element->jenis_simpanan->jenis_simpanan}}</td>
                             <th>
+                                <a href="{{ url('nasabahCabang/'.$element->id.'/edit') }}" title="Edit Data" class="btn btn-success btn-circle"><i class="fa fa-edit"></i></a>
                                 <a href="{{ url('viewNasabah/'.$element->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> See More</a>
                             </th>
                         </tr>
@@ -38,4 +39,5 @@ Data Form Nasabah Cabang {{$user->cabang->nama_cabang}}
         </div>
     </div>
 </div>
+@include('sweetalert::alert')
 @endsection

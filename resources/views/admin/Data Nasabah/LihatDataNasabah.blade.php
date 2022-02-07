@@ -284,7 +284,7 @@ Lihat Data Nasabah
          @elseif($formulir->jenis_simpanan->jenis_simpanan == "Simpanan Mudharabah")
              <a href="{{ url('laporanMudharabah/'.$formulir->id) }}" title="Report PDF" class="btn btn-info"><i class="fa fa-print"></i>Buat Laporan Mudharabah PDF</a>
          @endif
-         <a href="{{ url('nasabah') }}" title="Kembali" class="btn btn-secondary"><i class="fa fa-undo"></i>Kembali</a>
+         <a href="{{ url('nasabahCabang/'.Auth::user()->id_cabang) }}" title="Kembali" class="btn btn-secondary"><i class="fa fa-undo"></i>Kembali</a>
      </div>
  </div>
 </div>

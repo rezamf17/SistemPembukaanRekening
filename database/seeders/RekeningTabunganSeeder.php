@@ -63,7 +63,7 @@ class RekeningTabunganSeeder extends Seeder
             'bidang_usaha' => 'pabrik',
             'alamat_perusahaan' => 'Rancaekek',
             'pekerjaan' => 'buruh pabrik',
-            'pendidikan' => 'SMA',
+            'pendidikan' => 'SMA/SMK',
             'agama' => 'Islam',
             'penghasilan' => '23423423',
             ]
