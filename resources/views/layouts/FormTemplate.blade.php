@@ -46,6 +46,25 @@
       $( ".nama" ).prop("disabled", true);
       $( ".nomor" ).prop("disabled", true);
     });
+
+
+$("#header-perorang").hide();
+$("#body-perorang").hide();
+$("#header-badan").hide();
+$("#body-badan").hide();
+
+   $("#perorang").click(function() {
+      $("#header-perorang").show();
+      $("#body-perorang").show();
+      $("#header-badan").hide();
+      $("#body-badan").hide();
+   });
+   $("#badan").click(function() {
+      $("#header-badan").show();
+      $("#body-badan").show();
+      $("#header-perorang").hide();
+      $("#body-perorang").hide();
+   });
   </script>
 </body>
 </html>
