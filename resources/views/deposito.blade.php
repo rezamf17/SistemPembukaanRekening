@@ -52,8 +52,8 @@
     </select>
     <div class="text-center">
       <label>Pilih Jenis Rekening</label> <br>
-        <button onclick="nasabah()" type="button" class="btn btn-primary disable">Rekening Nasabah Perorangan</button>
-        <button onclick="badan()" type="button" class="btn btn-danger disable">Rekening Nasabah Badan</button>
+        <button onclick="nasabah()" id="perorang" type="button" class="btn btn-primary disable">Rekening Nasabah Perorangan</button>
+        <button onclick="badann()" id="badan" type="button" class="btn btn-danger disable">Rekening Nasabah Badan</button>
         <p id="status"></p>
     </div>
 </div>
@@ -224,10 +224,10 @@
 </div>
 
 {{-- zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz --}}
-<div class="card-header text-white bg-primary">
+<div id="header-perorang" class="card-header text-white bg-primary">
   <h5>B. DATA NASABAH PERORANGAN</h5>
 </div>
-<div class="card-body">
+<div id="body-perorang" class="card-body">
   <label>Sumber Penghasilan</label>
   <div class="form-check">
     <input class="form-check-input disable" type="radio" id="nasabah_penghasilan1" name="sumber_penghasilan" value="Hasil Usaha" required>
@@ -376,8 +376,8 @@
 
 
 {{-- zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz --}}
-<div class="card-header text-white bg-primary"><h5>C. DATA NASABAH BADAN</h5></div>
-<div class="card-body">
+<div id="header-badan" class="card-header text-white bg-primary"><h5>C. DATA NASABAH BADAN</h5></div>
+<div id="body-badan" class="card-body">
   <label>Bentuk Usaha</label>
 <div class="form-check">
     <input class="form-check-input disable" type="radio" name="bentuk_usaha" id="badan_bentuk1" value="PT" required>
