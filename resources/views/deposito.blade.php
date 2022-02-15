@@ -223,6 +223,10 @@
   </div>
 </div>
 
+<div id="warning" class="card-header text-white bg-danger">
+  <h5>KAMU BELUM MEMILIH KATEGORI NASABAH</h5>
+</div>
+
 {{-- zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz --}}
 <div id="header-perorang" class="card-header text-white bg-primary">
   <h5>B. DATA NASABAH PERORANGAN</h5>

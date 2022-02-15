@@ -58,12 +58,14 @@ $("#body-badan").hide();
       $("#body-perorang").show();
       $("#header-badan").hide();
       $("#body-badan").hide();
+      $("#warning").hide();
    });
    $("#badan").click(function() {
       $("#header-badan").show();
       $("#body-badan").show();
       $("#header-perorang").hide();
       $("#body-perorang").hide();
+      $("#warning").hide();
    });
   </script>
 </body>
