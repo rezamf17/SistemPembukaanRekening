@@ -19,9 +19,9 @@ class ReportController extends Controller
         $formulir = Formulir::where('id', $id)->first();
         // return view('super-admin.Report.LaporanDataNasabah', compact('formulir'));
         // set_time_limit(300);
-        $pdf = PDF::loadview('super-admin.Report.LaporanDataNasabah', compact('formulir'))->setPaper('legal');
-        return $pdf->download('ReportTabungan'.$formulir->identitas_nasabah->nama.'.pdf');
-        // return $pdf->stream();
+        $pdf = PDF::loadview('super-admin.Report.LaporanDataNasabah', compact('formulir'))->setPaper('a4');
+        // return $pdf->download('ReportTabungan'.$formulir->identitas_nasabah->nama.'.pdf');
+        return $pdf->stream();
     }
 
     public function depositoNasabahReport($id)
@@ -29,9 +29,9 @@ class ReportController extends Controller
         $deposito = Deposito::where('id', $id)->first();
         // return view('super-admin.Report.LaporanDataNasabahDeposito', compact('deposito'));
         // set_time_limit(300);
-        $pdf = PDF::loadview('super-admin.Report.LaporanDataNasabahDeposito', compact('deposito'))->setPaper('legal');
-        return $pdf->download('ReportDeposito.pdf');
-        // return $pdf->stream();
+        $pdf = PDF::loadview('super-admin.Report.LaporanDataNasabahDeposito', compact('deposito'))->setPaper('a4');
+        // return $pdf->download('ReportDeposito.pdf');
+        return $pdf->stream();
     }
 
     public function wadiahNasabahReport($id)
@@ -39,8 +39,8 @@ class ReportController extends Controller
         $formulir = Formulir::where('id', $id)->first();
         // return view ('super-admin.Report.LaporanWadiah', compact('formulir'));
         $pdf = PDF::loadview('super-admin.Report.LaporanWadiah', compact('formulir'))->setPaper('a4');
-        return $pdf->download('ReportWadiah-'.$formulir->identitas_nasabah->nama.'.pdf');
-        // return $pdf->stream();
+        // return $pdf->download('ReportWadiah-'.$formulir->identitas_nasabah->nama.'.pdf');
+        return $pdf->stream();
     }
 
     public function mudharabahNasabahReport($id)
@@ -48,8 +48,8 @@ class ReportController extends Controller
          $formulir = Formulir::where('id', $id)->first();
         // return view ('super-admin.Report.LaporanMudharabah', compact('formulir'));
         $pdf = PDF::loadview('super-admin.Report.LaporanMudharabah', compact('formulir'))->setPaper('A4');
-        return $pdf->download('ReportMudharabah-'.$formulir->identitas_nasabah->nama.'.pdf');
-        // return $pdf->stream();
+        // return $pdf->download('ReportMudharabah-'.$formulir->identitas_nasabah->nama.'.pdf');
+        return $pdf->stream();
     }
 
      public function tabunganNasabahReportAdmin($id)
@@ -57,9 +57,9 @@ class ReportController extends Controller
         $formulir = Formulir::where('id', $id)->first();
         // return view('super-admin.Report.LaporanDataNasabah', compact('formulir'));
         // set_time_limit(300);
-        $pdf = PDF::loadview('super-admin.Report.LaporanDataNasabah', compact('formulir'))->setPaper('legal');
-        return $pdf->download('ReportTabungan'.$formulir->identitas_nasabah->nama.'.pdf');
-        // return $pdf->stream();
+        $pdf = PDF::loadview('super-admin.Report.LaporanDataNasabah', compact('formulir'))->setPaper('a4');
+        // return $pdf->download('ReportTabungan'.$formulir->identitas_nasabah->nama.'.pdf');
+        return $pdf->stream();
     }
 
     public function depositoNasabahReportAdmin($id)
@@ -67,9 +67,9 @@ class ReportController extends Controller
         $deposito = Deposito::where('id', $id)->first();
         // return view('super-admin.Report.LaporanDataNasabahDeposito', compact('deposito'));
         // set_time_limit(300);
-        $pdf = PDF::loadview('super-admin.Report.LaporanDataNasabahDeposito', compact('deposito'))->setPaper('legal');
-        return $pdf->download('ReportDeposito.pdf');
-        // return $pdf->stream();
+        $pdf = PDF::loadview('super-admin.Report.LaporanDataNasabahDeposito', compact('deposito'))->setPaper('a4');
+        // return $pdf->download('ReportDeposito.pdf');
+        return $pdf->stream();
     }
 
     public function wadiahNasabahReportAdmin($id)
@@ -77,8 +77,8 @@ class ReportController extends Controller
         $formulir = Formulir::where('id', $id)->first();
         // return view ('super-admin.Report.LaporanWadiah', compact('formulir'));
         $pdf = PDF::loadview('super-admin.Report.LaporanWadiah', compact('formulir'))->setPaper('a4');
-        return $pdf->download('ReportWadiah-'.$formulir->identitas_nasabah->nama.'.pdf');
-        // return $pdf->stream();
+        // return $pdf->download('ReportWadiah-'.$formulir->identitas_nasabah->nama.'.pdf');
+        return $pdf->stream();
     }
 
     public function mudharabahNasabahReportAdmin($id)
@@ -86,7 +86,7 @@ class ReportController extends Controller
          $formulir = Formulir::where('id', $id)->first();
         // return view ('super-admin.Report.LaporanMudharabah', compact('formulir'));
         $pdf = PDF::loadview('super-admin.Report.LaporanMudharabah', compact('formulir'))->setPaper('A4');
-        return $pdf->download('ReportMudharabah-'.$formulir->identitas_nasabah->nama.'.pdf');
-        // return $pdf->stream();
+        // return $pdf->download('ReportMudharabah-'.$formulir->identitas_nasabah->nama.'.pdf');
+        return $pdf->stream();
     }
 }

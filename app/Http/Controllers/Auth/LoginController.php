@@ -65,7 +65,7 @@ class LoginController extends Controller
 
             return redirect()->route('login')
 
-                ->with('warning','Email atau Password salah!');
+                ->with('warning','Email atau Password tidak valid!');
                 // ->withErrors('Email atau Password salah!');
         }
     }

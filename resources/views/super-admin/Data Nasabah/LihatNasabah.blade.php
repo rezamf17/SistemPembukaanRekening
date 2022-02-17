@@ -64,7 +64,7 @@ Lihat Data Nasabah
                 </tr>
                 <tr>
                     <th>Foto/Scan KTP</th>
-                    <td><img src="{{ asset('storage/'.$formulir->files->name) }}" alt=""></td>
+                    <td><img src="{{ asset('storage/'.$formulir->files->name) }}" style="width: 350px;"></td>
                 </tr>
             </table>
         </div>

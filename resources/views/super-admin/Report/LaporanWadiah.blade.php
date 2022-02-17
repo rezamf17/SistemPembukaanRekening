@@ -28,7 +28,7 @@
 			margin-left: 20px;
 		}
 		img{
-			width: 100px;
+			width: 150px;
 			display: inline-block;
 		}
 		.card-header{
@@ -49,6 +49,7 @@
 			display: inline-block;
 		}
 		.gambar{
+			margin-top: 10px;
 			display: inline-block;
 			/*width: 100px;*/
 			text-align: left;
@@ -109,7 +110,7 @@
 	</div>
 </div>
 <div class="card">
-	<div class="card-header"></div>
+	<div class="card-header">PERNYATAAN</div>
 </div>
 <div class="card-body">
 Bersama ini, saya selaku NASABAH permohonan pembukaan rekening tabungan dengan Akad Wadi'ah Yad Dhamanah Kepada BPRS ALMASOEM Cabang {{$formulir->cabang->nama_cabang}} (Selanjutnya disebut BANK) dengan rincian sebagai berikut:

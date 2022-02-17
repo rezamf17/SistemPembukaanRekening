@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="">
 	<style>
 		body{
-			font-family: sans-serif;
+			font-family: cambria, sans-serif;
 		}
 		h3{
 			display: inline-block;
@@ -27,7 +27,7 @@
 			margin-left: 20px;
 		}
 		img{
-			width: 100px;
+			width: 150px;
 			display: inline-block;
 		}
 		.card-header{
@@ -47,6 +47,7 @@
 			display: inline-block;
 		}
 		.gambar{
+            margin-top: 10px;
 			display: inline-block;
 			/*width: 100px;*/
 		}
@@ -79,7 +80,7 @@
 <body>
 <header>
 	<div class="gambar">
-		<img src="{{public_path("/style/img/bprslogo.png")}}" alt="">
+		<img src="{{public_path("/style/img/bprslogo.png")}}">
 		{{-- <img src="../style/img/bprslogo1.png" alt="" style=" width: 150px; margin-bottom: -10px;"> --}}	
 	</div>
 	<div class="judul">
@@ -159,42 +160,6 @@
     <div class="card-body">
         <table class="table">
             @if ($formulir->nasabah_perorang == null)
-            <tr>
-                <th>Sumber Penghasilan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Nama Tempat Kerja</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Jabatan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Bidang Usaha</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Alamat Perusahaan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Pekerjaan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Pendidikan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Agama</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Penghasilan</th>
-                <td>-</td>
-            </tr>
             @else
             <tr>
                 <th>Sumber Penghasilan</th>
@@ -244,54 +209,6 @@
     <div class="card-body">
         <table class="table">
             @if ($formulir->nasabah_badan == null)
-            <tr>
-             <th>Nama Badan Usaha</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Bentuk Usaha</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Jenis Usaha</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Izin Usaha</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Alamat Pemilik</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>NPWP Pemilik</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Sumber Dana</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Omzet</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Pengurus</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th></th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th></th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th></th>
-             <td>-</td>
-         </tr>
          @else
 
          <tr>

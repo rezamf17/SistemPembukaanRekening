@@ -116,7 +116,7 @@ Lihat Data Nasabah Deposito
                 </tr>
                 <tr>
                     <th>Foto/Scan KTP</th>
-                    <td><img src="{{ asset('storage/'.$deposito->files->name) }}" alt=""></td>
+                    <td><img src="{{ asset('storage/'.$deposito->files->name) }}" style="width: 350px;"></td>
                 </tr>
             </table>
         @endif

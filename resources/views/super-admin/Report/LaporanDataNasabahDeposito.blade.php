@@ -27,7 +27,7 @@
 			margin-left: 20px;
 		}
 		img{
-			width: 100px;
+			width: 150px;
 			display: inline-block;
 		}
 		.card-header{
@@ -47,6 +47,7 @@
 			display: inline-block;
 		}
 		.gambar{
+            margin-top: 10px;
 			display: inline-block;
 			/*width: 100px;*/
 		}
@@ -94,46 +95,6 @@
         <div class="table-responsive">
             <table class="table" >
                 @if ($deposito->identitas_nasabah == null)
-                <tr>
-                    <th>Nama</th>
-                    <td>-</td>
-                    <th>Jenis Kelamin</th>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <th>Nama Ibu Kandung</th>
-                    <td>-</td>
-                    <th>Status Kependudukan</th>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <th>Tempat Lahir</th>
-                    <td>-</td>
-                    <th>Tanggal Lahir</th>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <th>No KTP</th>
-                    <td>-</td>
-                    <th>NPWP</th>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <th>Alamat</th>
-                    <td>-</td>
-                    <th>No HP</th>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <th>Bertindak Sebagai</th>
-                    <td>-</td>
-                    <th>Tujuan Buka Rekening</th>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <th>Pemotongan Zakat</th>
-                    <td>-</td>
-                </tr>
                 @else
                 <tr>
                     <th>Nama</th>
@@ -187,42 +148,6 @@
     <div class="card-body">
         <table class="table">
             @if ($deposito->nasabah_perorang == null)
-            <tr>
-                <th>Sumber Penghasilan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Nama Tempat Kerja</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Jabatan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Bidang Usaha</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Alamat Perusahaan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Pekerjaan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Pendidikan</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Agama</th>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th>Penghasilan</th>
-                <td>-</td>
-            </tr>
             @else
             <tr>
                 <th>Sumber Penghasilan</th>
@@ -272,54 +197,6 @@
     <div class="card-body">
         <table class="table">
             @if ($deposito->nasabah_badan == null)
-            <tr>
-             <th>Nama Badan Usaha</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Bentuk Usaha</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Jenis Usaha</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Izin Usaha</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Alamat Pemilik</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>NPWP Pemilik</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Sumber Dana</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Omzet</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th>Pengurus</th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th></th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th></th>
-             <td>-</td>
-         </tr>
-         <tr>
-             <th></th>
-             <td>-</td>
-         </tr>
          @else
 
          <tr>
