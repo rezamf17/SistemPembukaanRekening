@@ -196,4 +196,10 @@ class DepositoController extends Controller
         //
     }
 
+    public function hapus($id)
+    {
+        $deposito = Deposito::find($id);
+        $deposito->delete();
+        return redirect('rekeningDeposito')->with('success', 'Data Nasabah Deposito Terhapus!');
+    }
 }

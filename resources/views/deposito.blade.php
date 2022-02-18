@@ -17,7 +17,7 @@
     <a href="#" class="btn btn-secondary btn-lg text-center">REKENING DEPOSITO</a> <br>
     </div>
   </div>
-  <form action="{{ url('/deposito') }}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+  <form action="{{ url('/deposito') }}" method="post" onsubmit="return submitForm(this);" accept-charset="utf-8" enctype="multipart/form-data">
     @csrf
   
         <br><label>Apakah Anda Sudah Memiliki Rekening Bank BPRS ALMASOEM ?</label>

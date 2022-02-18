@@ -68,5 +68,22 @@ $("#body-badan").hide();
       $("#warning").hide();
    });
   </script>
+    <script>
+    function submitForm(form) {
+        swal({
+            title: "Anda Yakin?",
+            text: "Anda yakin sudah mengisi data dengan benar?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then(function (isOkay) {
+            if (isOkay) {
+                form.submit();
+            }
+        });
+        return false;
+    }
+  </script>
 </body>
 </html>

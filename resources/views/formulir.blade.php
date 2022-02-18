@@ -1,7 +1,7 @@
 @extends('layouts.FormTemplate')
 @section('content')
 <div class="card" style="background-color: #e7e7e7;">
-  <form action="{{ url('/') }}" method="post" onsubmit="return confirm('Anda yakin sudah mengisi data dengan benar?')" accept-charset="utf-8" enctype="multipart/form-data">
+  <form action="{{ url('/') }}" method="post" onsubmit="return submitForm(this);" accept-charset="utf-8" enctype="multipart/form-data">
     @csrf
   <div class="card-header text-center text-white bg-primary">
     <img src="{{asset('style/img/bprslogo.png')}}" class="img-fluid" alt="Responsive image">
@@ -536,6 +536,7 @@ b. Melakukan pemblokiran rekening jika diindikasi telah terjadi penyalahgunaan r
 </div>
 <div class="card-footer">
   <button type="submit" class="btn btn-primary">Submit</button>
+  
   </form>
 </div>
 </div>

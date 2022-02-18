@@ -330,6 +330,29 @@ aria-hidden="true">
     });
     })
 </script>
+<script>
+    $('.delete-deposito').click(function (){
+        const nasabahId = $(this).attr('data-id');
+        const nasabahNama = $(this).attr('data-nama');
+        swal({
+          title: "Anda yakin?",
+          text: `Anda yakin ingin menghapus data nasabah ${nasabahNama} ?`,
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+      })
+        .then((willDelete) => {
+          if (willDelete) {
+            window.location = "/depositoHapus/"+nasabahId+""
+            swal("Data berhasil dihapus!", {
+              icon: "success",
+          });
+        } else {
+            swal("Data akun tidak jadi dihapus");
+        }
+    });
+    })
+</script>
 </body>
 
 </html>
